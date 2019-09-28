@@ -3,10 +3,21 @@
 	height: 100px;
 	width: 70%;
 	background: lightblue;
-  	transition: width 2s, height 2s;
+  	transition: width 1s, height 1s;
   	margin:auto;
+  	text-align:center;
 }
 .row:hover {
 	height: 200px;
 	width: 90%;
+}
+img.inrow {
+	height:100%;
+	width:auto;
+}
+img.right {
+	height:100%;
+	width:auto;
+	position: absolute;
+  	right: 0px;
 }
