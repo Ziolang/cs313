@@ -5,10 +5,9 @@
 	</head>
 	<body>
 		<div class="row">
-			<img source="beach.jpg" alt="beach"/>
-			<h1>Adam Fletcher</h1><br/>
+			<img source="https://www.dropbox.com/s/bxmclkeazzcwrvh/beach.jpg?dl=0" alt="beach"/>
+			<h1>Adam Fletcher</h1> <img class="right" source="https://www.dropbox.com/s/j5mkoij3m0nwc3f/beach2.jpg?dl=0" alt="beach2"/><br/>
 			<p>A young father</p>
-			<img class="right" source="beach2.jpg" alt="beach2"/>
 		</div>
 		<?php
 			echo "Server time is: " . date("l jS \of F Y h:i:s A");
