@@ -8,10 +8,10 @@
 			Email: <input type="email" name="name"><br/>
 			Degree:<br/>
 			<?php 
-				$major = array("cs" => "Computer Science", "wdd" => "Web Design and Development", "cit" => "Computer Information Technology", "ce" => "Computer Engineering")
+				$major = array("cs" => "Computer Science", "wdd" => "Web Design and Development", "cit" => "Computer Information Technology", "ce" => "Computer Engineering");
 
 				foreach($major as $x => $x_value){
-				echo '<input type="radio" name="major" value="$x"> $x_value<br/>'
+				echo '<input type="radio" name="major" value="$x"> $x_value<br/>';
 			}
 			?>
 			Comment:<br/>
