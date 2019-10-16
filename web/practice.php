@@ -29,7 +29,7 @@
 
 	foreach ($db->query('SELECT * FROM Scriptures') as $row)
 	{
-  		echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>"' . $row['content'] . '"';
+  		echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>"' . $row['content'] . '"<br/>';
 	}
 
 ?>
