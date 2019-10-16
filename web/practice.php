@@ -3,7 +3,7 @@
 </head>
 <body>
 	<p>Testing 1</p> 
-
+	<h1>Scripture Resources</h1>
 <?php
 	try
 	{
@@ -27,9 +27,11 @@
   		die();
 	}
 
+
 	foreach ($db->query('SELECT * FROM Scriptures') as $row)
 	{
-  		echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>"' . $row['content'] . '"<br/>';
+  		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
+            echo '"' . $row['content'] . '"<br><br>';
 	}
 
 ?>
