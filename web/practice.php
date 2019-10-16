@@ -2,10 +2,9 @@
 <head>
 </head>
 <body>
+	<p>Testing 1</p> 
 
 <?php
-
-function connect() {
 	try
 	{
   		$dbUrl = getenv('DATABASE_URL');
@@ -32,7 +31,9 @@ function connect() {
 	{
   		echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '<br/>"' . $row['content'] . '"';
 	}
-}
 
 ?>
+
+
+<p>Testing 2</p>
 </body>
