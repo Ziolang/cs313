@@ -2,6 +2,7 @@
 <head>
 </head>
 <body>
+	Testing 1
 
 <?php
 	try
@@ -32,4 +33,7 @@
 	}
 
 ?>
+
+
+Testing 2
 </body>
