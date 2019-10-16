@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script type="text/javascript" src="team02.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#fade").click(function(){
+					$(".b3").toggle("slow");
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function(){
+				$("#jq").click(function(){
+					$("#b1").css("background", $("#i1").val());
+				});
+			});
+		</script>
 		<link rel="stylesheet" type="text/css" href="team02.css">
 		<title>Team02</title>
 	</head>
 	<body>
-		<div>
+		<div class="b0">
+			<button class="button" onclick="clicked()">Click Me</button>
+		</div>
+		<div id="b1">
+			DIV 1
+		</div>
+		<div class="b2">
+			DIV 2
+		</div>
+		<div class="b3">
+			DIV 3
 		</div>
 		<div>
+			<p>Input a Hexidecimal value or Color word: 
+			<input id="i1" placeholder="Ex: #293045 or red"></p>
+			<button onclick="changeColor()">Change Color</button> <button id="jq">jQuery Change Color</button> <button id="fade">Fade Div 3</button>
 		</div>
-		<div>
-		</div>
-		<button>Click Me</button>
 	</body>
 </html> 

@@ -1,27 +1,63 @@
-div {
+body {
+	margin:5%;
+}
+
+.b0 {
+	width:100%;
+	text-align:center;
+}
+#b1 {
 	padding:5px;
 	text-align:center;
 	font-size:40px;
 	height:100px;
-	width:30%;
-}
-.b1 {
+	width:32%;
 	border:4px solid blue;
 	border-radius: 6px;
-	background-color:lightblue;
+	background:lightblue;
+	float:left;
+
+}
+#b1:hover {
+	font-weight: bold;
 }
 
 .b2 {
+	padding:5px;
+	text-align:center;
+	font-size:40px;
+	height:100px;
+	width:31%;
 	border:4px solid darkgreen;
 	border-radius: 6px;
-	background color:green;
+	background-color:lightgreen;
+	float:left;
+}
+.b2:hover {
+	font-weight: bold;
 }
 
 .b3 {
+	padding:5px;
+	text-align:center;
+	font-size:40px;
+	height:100px;
+	width:32%;
 	border:4px solid darkred;
 	border-radius: 6px;
 	background-color: red;
+	float:left;
 }
-button {
-	align-self: center;
+.b3:hover {
+	font-weight: bold;
 }
+
+.button {
+	left:50%;
+}
+
+#i1 {}
+
+#jq {}
+
+#fade {}

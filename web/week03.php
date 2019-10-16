@@ -3,7 +3,7 @@
 	<head>
 	</head>
 	<body>
-		<form action="week03.php" method="post">
+		<form action="submit.php" method="post">
 			Name: <input type="text" name="name"><br/>
 			Email: <input type="email" name="name"><br/>
 			Degree:<br/>
