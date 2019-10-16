@@ -2,10 +2,18 @@
 <head>
 </head>
 <body>
-	<p>Testing 1</p> 
 	<h1>Scripture Resources</h1>
 <?php
-	try
+	
+
+	/*foreach ($db->query('SELECT * FROM Scriptures') as $row)
+	{
+  		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
+            echo '"' . $row['content'] . '"<br><br>';
+	}*/
+
+	if (isset($_POST['book'])) {
+		try
 	{
   		$dbUrl = getenv('DATABASE_URL');
 
@@ -20,6 +28,8 @@
   		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
   		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		$book = $_POST['book'];
 	}
 	catch (PDOException $ex)
 	{
@@ -27,15 +37,15 @@
   		die();
 	}
 
-
-	foreach ($db->query('SELECT * FROM Scriptures') as $row)
-	{
-  		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
+	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.book = '$book'") as $row) {
+		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
             echo '"' . $row['content'] . '"<br><br>';
 	}
+}
 
 ?>
 
-
-<p>Testing 2</p>
+	<form name="search" action="practice.php" method="post">
+		Search Book: <input type="text" name="book" /> <input type="submit" value="Search"><br/>
+	</form>
 </body>
