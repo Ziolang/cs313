@@ -5,7 +5,7 @@
 	<h1>Scripture Resources</h1>
 <?php
 	
-		try
+	try
 	{
   		$dbUrl = getenv('DATABASE_URL');
 
@@ -29,7 +29,7 @@
   		die();
 	}
 
-	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.id = $_GET['id']") as $row) {
+	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.id =" . $_GET['id']) as $row) {
 		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
             echo '"' . $row['content'] . '"<br><br>';
 	}
