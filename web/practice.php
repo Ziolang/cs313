@@ -30,7 +30,6 @@
   		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		$book = $_POST['book'];
-		$url = "result.php?" ."id=" . $row['id'];
 	}
 	catch (PDOException $ex)
 	{
@@ -39,6 +38,7 @@
 	}
 
 	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.book = '$book'") as $row) {
+		$url = "result.php?" ."id=" . $row['id'];
 		echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </a></b><br/>";
 	}
 }
