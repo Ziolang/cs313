@@ -24,7 +24,7 @@
 
 					foreach ($db->query("SELECT * FROM Units") as $unit) {
 						$url = "result.php?" ."id=" . $unit['id'];
-						echo '<a href="$url">' . $unit['name'] . "</a>";
+						echo "<a href=\"$url\">" . $unit['name'] . "</a>";
 					}
 				?>
 			</div>
