@@ -28,25 +28,25 @@
 
 				
 				foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
-					echo "<h1>" . $unit['name'] . "</h1><br/>Level: " . $unit['lvl'] . "<br/>Experience: " . $unit['exp'] . "<br/>Class: " . $unit['class'] . "<br/>Weapon: ";
+					echo "<h1>" . $unit['name'] . "</h1><br/><strong>Level:</strong> " . $unit['lvl'] . "<br/><strong>Experience:</strong> " . $unit['exp'] . "<br/><strong>Class:</strong> " . $unit['class'] . "<br/><strong>Weapon:</strong> ";
 					foreach ($db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['weapon1']) as $w1) {
 						echo $w1['name'] . " (" . $w1['effect'] . ")";
 					}
 					if ($unit['weapon2'] != NULL)
 						foreach ($db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['weapon2']) as $w2) {
-							echo "<br/>Weapon2: " . $w2['name'] . " (" . $w2['effect'] . ")";
+							echo "<br/><strong>Weapon2:</strong> " . $w2['name'] . " (" . $w2['effect'] . ")";
 						}
 					foreach ($db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['armor']) as $ar) {
-						echo "<br/>Armor: " . $ar['name'] . " (" . $ar['effect'] . ")";
+						echo "<br/><strong>Armor:</strong> " . $ar['name'] . " (" . $ar['effect'] . ")";
 					}
 					foreach ($db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['accessory']) as $ac) {
-						echo "<br/>Accessory: " . $ac['name'] . " (" . $ac['effect'] . ")";
+						echo "<br/><strong>Accessory:</strong> " . $ac['name'] . " (" . $ac['effect'] . ")";
 					}
 					foreach ($db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['aability']) as $aa) {
-						echo "<br/>A-Ability: " . $aa['name'];
+						echo "<br/><strong>A-Ability:</strong> " . $aa['name'];
 
 						foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill1']) as $sk1) {
-							echo "<br/>+ " . $sk1['name'] . ": ";
+							echo "<br/><strong>+ " . $sk1['name'] . ":</strong> ";
 							if ($sk1['stat'] != NULL)
 								echo $sk1['dmg'] . " " . $sk1['stat'] . " Damage. ";
 							if ($sk1['effect'] != NULL)
@@ -55,7 +55,7 @@
 						}
 
 						foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill2']) as $sk2) {
-							echo "<br/>+ " . $sk2['name'] . ": ";
+							echo "<br/><strong>+ " . $sk2['name'] . ":</strong> ";
 							if ($sk2['stat'] != NULL)
 								echo $sk2['dmg'] . " " . $sk2['stat'] . " Damage. ";
 							if ($sk2['effect'] != NULL)
@@ -63,7 +63,28 @@
 							echo "Range: " . $sk2['range'] . ". " . $sk2['mp'] . " MP.";
 						}
 					}
-					
+
+					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['sability']) as $sa) {
+						echo "<br/><strong>S-Ability:</strong> " . $sa['name'] . ": " $sa['effect'];
+					}
+
+					echo "<br/><strong>R-Ability:</strong> ";
+					if ($unit['rability'] != NULL)
+					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['rability']) as $sa) {
+						echo $sa['name'] . ": " $sa['effect'];
+					}
+					else
+						echo "None."
+
+					echo "<strong>HP:</strong> " . $unit['hp'] .
+						"<strong>MP:</strong> " . $unit['mp'] .
+						"<strong>Atk:</strong> " . $unit['atk'] .
+						"<strong>Def:</strong> " . $unit['def'] .
+						"<strong>Int:</strong> " . $unit['int'] .
+						"<strong>Spr:</strong> " . $unit['spr'] .
+						"<strong>Crit:</strong> " . $unit['crit'] .
+						"<strong>Eva:</strong> " . $unit['eva'] .
+						"<strong>Move:</strong> " . $unit['move'];
 				}
 				?>
 			</div>
