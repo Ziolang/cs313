@@ -65,17 +65,18 @@
 					}
 
 					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['sability']) as $sa) {
-						echo "<br/><strong>S-Ability:</strong> " . $sa['name'] . ": " $sa['effect'];
+						echo "<br/><strong>S-Ability:</strong> " . $sa['name'] . ": " . $sa['effect'];
 					}
 
 					echo "<br/><strong>R-Ability:</strong> ";
 					if ($unit['rability'] != NULL) {
-						foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['rability']) as $sa) {
-							echo $sa['name'] . ": " $sa['effect'];
+						foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['rability']) as $ra) {
+							echo $ra['name'] . ": " . $ra['effect'];
 						}
 					}
-					else
+					else {
 						echo "None.";
+					}
 
 					echo "<strong>HP:</strong> " . $unit['hp'] .
 						"<strong>MP:</strong> " . $unit['mp'] .
