@@ -78,15 +78,15 @@
 						echo "None.";
 					}
 
-					echo "<strong>HP:</strong> " . $unit['hp'] .
-						"<strong>MP:</strong> " . $unit['mp'] .
-						"<strong>Atk:</strong> " . $unit['atk'] .
-						"<strong>Def:</strong> " . $unit['def'] .
-						"<strong>Int:</strong> " . $unit['int'] .
-						"<strong>Spr:</strong> " . $unit['spr'] .
-						"<strong>Crit:</strong> " . $unit['crit'] .
-						"<strong>Eva:</strong> " . $unit['eva'] .
-						"<strong>Move:</strong> " . $unit['move'];
+					echo "<br/><strong>HP:</strong> " . $unit['hp'] .
+						"<br/><strong>MP:</strong> " . $unit['mp'] .
+						"<br/><strong>Atk:</strong> " . $unit['atk'] .
+						"<br/><strong>Def:</strong> " . $unit['def'] .
+						"<br/><strong>Int:</strong> " . $unit['int'] .
+						"<br/><strong>Spr:</strong> " . $unit['spr'] .
+						"<br/><strong>Crit:</strong> " . $unit['crit'] .
+						"<br/><strong>Eva:</strong> " . $unit['eva'] .
+						"<br/><strong>Move:</strong> " . $unit['move'];
 				}
 				?>
 			</div>
