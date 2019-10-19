@@ -24,6 +24,8 @@
 					<input type="text" name="name" placeholder="Enter a name..."><br/>
 					<input type="submit" name="byName" value="Search">
 				</form>
+				<br/>
+				<br/>
 
 				<?php 
 					if (isset($_GET["id"]))
@@ -33,7 +35,7 @@
 
 							foreach ($db->query("SELECT * FROM Units WHERE Units.name = '$name'") as $row) {
 								$url = "result.php?" ."id=" . $row['id'];
-								echo "<b><a href=\"$url\">" . $row['name'] . " Level " . $row['lvl'] . " " . $row['class'] . " - </a></b><br/>";
+								echo "<b><a href=\"$url\">" . $row['name'] . " the Level " . $row['lvl'] . " " . $row['class'] . "</a></b><br/>";
 							}
 						}
 				?>
@@ -61,8 +63,8 @@
 							$x = $_POST['statNum'];
 
 							foreach ($db->query("SELECT * FROM Units WHERE Units.$stat = $x") as $row) {
-								$url = "result.php?" ."id=" . $row['id'];
-								echo "<b><a href=\"$url\">" . $row['name'] . " Level " . $row['lvl'] . " " . $row['class'] . " - </a></b><br/>";
+								$url = "unit.php?" ."id=" . $row['id'];
+								echo "<b><a href=\"$url\">" . $row['name'] . " the Level " . $row['lvl'] . " " . $row['class'] . "</a></b><br/>";
 							}
 						}
 				?>

@@ -46,3 +46,14 @@ body {
 .center {
 	text-align:center;
 }
+
+.unitresult {
+	color:white;
+}
+
+.unitresult:hover {
+	color:grey;
+}
+.unitresult:visited {
+	color:white;
+}
