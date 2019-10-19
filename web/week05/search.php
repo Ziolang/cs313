@@ -19,16 +19,23 @@
 	<div class="container">
   		<div class="row">
 			<div class="search col-sm-6">
-				<form action="search.php" method="post">
+				<form action="search.php?id=1" method="post">
 					<h1 class="center">Search Units by Name</h1><br/> 
-					<input type="text" name="name"><br/>
-					<input type="submit" name="byName">
+					<input type="text" name="name" placeholder="Enter a name..."><br/>
+					<input type="submit" name="byName" value="Search">
 				</form>
+
+				<?php 
+					if (isset($_GET["id"]))
+						if ($_GET["id"] = 1) {
+
+						}
+				?>
 			</div>
 			<div class="search col-sm-6">
-				<form action="search.php" method="post">
+				<form action="search.php?id=2" method="post">
 					<h1 class="center">Search Units by Stat</h1><br/> 
-					<select name="stat">
+					Stat: <select name="stat">
 						<option value="lvl">Level</option>
 						<option value="atk">Attack</option>
 						<option value="def">Defense</option>
@@ -37,9 +44,15 @@
 						<option value="crit">Critical</option>
 						<option value="eva">Evasion</option>
 					</select> &nbsp&nbsp&nbsp
-					<input type="text" name="statNum"><br/>
-					<input type="submit" name="byStat">
+					Amount: <input type="text" name="statNum" placeholder="Enter a number..."><br/>
+					<input type="submit" name="byStat" value="Search">
 				</form>
+				<?php 
+					if (isset($_GET["id"]))
+						if ($_GET["id"] = 1) {
+							
+						}
+				?>
 			</div>
 		</div>
 
