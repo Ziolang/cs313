@@ -28,7 +28,13 @@
 				<?php 
 					if (isset($_GET["id"]))
 						if ($_GET["id"] = 1) {
-							echo "It worked!";
+							$db = connect();
+							$name = $_POST['name'];
+
+							foreach ($db->query("SELECT * FROM Units WHERE Units.name = '$name'") as $row) {
+								$url = "result.php?" ."id=" . $row['id'];
+								echo "<b><a href=\"$url\">" . $row['name'] . " Level " . $row['lvl'] . " " . $row['class'] . " - </a></b><br/>";
+							}
 						}
 				?>
 			</div>
@@ -49,8 +55,15 @@
 				</form>
 				<?php 
 					if (isset($_GET["id"]))
-						if ($_GET["id"] = 1) {
-							echo "It worked!";
+						if ($_GET["id"] = 2) {
+							$db = connect();
+							$stat = $_POST['stat'];
+							$x = $_POST['statNum'];
+
+							foreach ($db->query("SELECT * FROM Units WHERE Units.$stat = $x") as $row) {
+								$url = "result.php?" ."id=" . $row['id'];
+								echo "<b><a href=\"$url\">" . $row['name'] . " Level " . $row['lvl'] . " " . $row['class'] . " - </a></b><br/>";
+							}
 						}
 				?>
 			</div>
