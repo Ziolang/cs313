@@ -18,8 +18,35 @@
 	</div>
 	<div class="container">
   		<div class="row">
-			<div class="search col-sm-12">
-				<?php 
+			<div class="search col-sm-6">
+				<form action="search.php" method="post">
+					<h1 class="center">Search Units by Name</h1><br/> 
+					<input type="text" name="name"><br/>
+					<input type="submit" name="byName">
+				</form>
+			</div>
+			<div class="search col-sm-6">
+				<form action="search.php" method="post">
+					<h1 class="center">Search Units by Stat</h1><br/> 
+					<select name="stat">
+						<option value="lvl">Level</option>
+						<option value="atk">Attack</option>
+						<option value="def">Defense</option>
+						<option value="int">Intelligence</option>
+						<option value="spr">Spirit</option>
+						<option value="crit">Critical</option>
+						<option value="eva">Evasion</option>
+					</select> &nbsp&nbsp&nbsp
+					<input type="text" name="statNum"><br/>
+					<input type="submit" name="byStat">
+				</form>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+<?php 
 					$db = connect();
 
 					foreach ($db->query("SELECT * FROM Units") as $unit) {
@@ -27,8 +54,3 @@
 						echo "<a href=\"$url\">" . $unit['name'] . "</a>";
 					}
 				?>
-			</div>
-		</div>
-
-	</div>
-</body>
