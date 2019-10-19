@@ -74,7 +74,7 @@
 						echo $sa['name'] . ": " $sa['effect'];
 					}
 					else
-						echo "None."
+						echo "None.";
 
 					echo "<strong>HP:</strong> " . $unit['hp'] .
 						"<strong>MP:</strong> " . $unit['mp'] .
