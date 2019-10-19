@@ -69,9 +69,10 @@
 					}
 
 					echo "<br/><strong>R-Ability:</strong> ";
-					if ($unit['rability'] != NULL)
-					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['rability']) as $sa) {
-						echo $sa['name'] . ": " $sa['effect'];
+					if ($unit['rability'] != NULL) {
+						foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['rability']) as $sa) {
+							echo $sa['name'] . ": " $sa['effect'];
+						}
 					}
 					else
 						echo "None.";
