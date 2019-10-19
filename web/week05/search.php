@@ -28,7 +28,7 @@
 				<?php 
 					if (isset($_GET["id"]))
 						if ($_GET["id"] = 1) {
-
+							echo "It worked!";
 						}
 				?>
 			</div>
@@ -50,7 +50,7 @@
 				<?php 
 					if (isset($_GET["id"]))
 						if ($_GET["id"] = 1) {
-							
+							echo "It worked!";
 						}
 				?>
 			</div>
