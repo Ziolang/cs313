@@ -24,18 +24,14 @@
 			</div>
 			<div class="search col-sm-8">
 				<?php
-				$unit = $db->query("
-					SELECT Units.*, SkillSet.* 
-					FROM Units
-					INNER JOIN SkillSet
-					ON Units.A_Ability = SkillSet.ID
-					WHERE Unit.id = $_GET['id']");
-				$weapon1 = $db->query("SELECT Equips.* FROM Equips, Units WHERE Equips.id =" . $unit['Units.weapon1']);
-				$weapon2 = $db->query("SELECT Equips.* FROM Equips, Units WHERE Equips.id =" . $unit['Units.weapon2']);
-				$armor = $db->query("SELECT Equips.* FROM Equips, Units WHERE Equips.id =" . $unit['Units.armor']);
-				$accessory = $db->query("SELECT Equips.* FROM Equips, Units WHERE Equips.id =" . $unit['Units.accessory']);
+				$unit = $db->query("SELECT * FROM Units WHERE Unit.id =" . $_GET['id']);
+				$skillset = $db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['A_Ability']);
+				$weapon1 = $db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['weapon1']);
+				$weapon2 = $db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['weapon2']);
+				$armor = $db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['armor']);
+				$accessory = $db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['accessory']);
 				
-				echo $unit['Units.name'];
+				echo $unit['name'];
 				?>
 			</div>
 			<div class="col-sm-2">
