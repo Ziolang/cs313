@@ -24,6 +24,8 @@
 			</div>
 			<div class="search col-sm-8">
 				<?php
+				$db = connect();
+
 				$unit = $db->query("SELECT * FROM Units WHERE Unit.id =" . $_GET['id']);
 				$skillset = $db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['A_Ability']);
 				$weapon1 = $db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['weapon1']);
