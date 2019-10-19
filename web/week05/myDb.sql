@@ -60,6 +60,8 @@ CREATE TABLE Units (
 	accessory int NOT NULL REFERENCES Equips(id), 
 	lvl int NOT NULL, 
 	exp int NOT NULL, 
+	hp int NOT NULL,
+	mp int NOT NULL,
 	atk int NOT NULL, 
 	def int NOT NULL, 
 	int int NOT NULL, 
@@ -122,6 +124,6 @@ VALUES
 
 INSERT INTO Units
 VALUES 
-	(DEFAULT, 'Magic Dude', 'Black Mage', 1, 1, NULL, 3, NULL, 6, 9, 1, 0, 2, 2, 4, 3, 2, 2, 2, NULL),
-	(DEFAULT, 'Sword Guy', 'Swordsman', 2, 2, NULL, 1, 2, 5, 8, 1, 0, 4, 3, 2, 2, 3, 3, 2, NULL),
-	(DEFAULT, 'Arrow Lady', 'Ranger', 3, 3, NULL, 4, NULL, 7, 10, 1, 0, 4, 2, 2, 3, 2, 4, 3, NULL);
+	(DEFAULT, 'Magic Dude', 'Black Mage', 1, 1, NULL, 3, NULL, 6, 9, 1, 0, 15, 25, 2, 2, 4, 3, 2, 2, 2, NULL),
+	(DEFAULT, 'Sword Guy', 'Swordsman', 2, 2, NULL, 1, 2, 5, 8, 1, 0, 25, 15, 4, 3, 2, 2, 3, 3, 2, NULL),
+	(DEFAULT, 'Arrow Lady', 'Ranger', 3, 3, NULL, 4, NULL, 7, 10, 1, 0, 20, 20, 4, 2, 2, 3, 2, 4, 3, NULL);
