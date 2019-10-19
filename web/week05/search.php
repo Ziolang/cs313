@@ -35,7 +35,7 @@
 
 							foreach ($db->query("SELECT * FROM Units WHERE Units.name = '$name'") as $row) {
 								$url = "result.php?" ."id=" . $row['id'];
-								echo "<b><a href=\"$url\">" . $row['name'] . " the Level " . $row['lvl'] . " " . $row['class'] . "</a></b><br/>";
+								echo "<b><a class=\"unitresult\" href=\"$url\">" . $row['name'] . " the Level " . $row['lvl'] . " " . $row['class'] . "</a></b><br/>";
 							}
 						}
 				?>
@@ -64,7 +64,7 @@
 
 							foreach ($db->query("SELECT * FROM Units WHERE Units.$stat = $x") as $row) {
 								$url = "unit.php?" ."id=" . $row['id'];
-								echo "<b><a href=\"$url\">" . $row['name'] . " the Level " . $row['lvl'] . " " . $row['class'] . "</a></b><br/>";
+								echo "<b><a class=\"unitresult\" href=\"$url\">" . $row['name'] . " the Level " . $row['lvl'] . " " . $row['class'] . "</a></b><br/>";
 							}
 						}
 				?>
@@ -73,12 +73,3 @@
 
 	</div>
 </body>
-
-<?php 
-					$db = connect();
-
-					foreach ($db->query("SELECT * FROM Units") as $unit) {
-						$url = "result.php?" ."id=" . $unit['id'];
-						echo "<a href=\"$url\">" . $unit['name'] . "</a>";
-					}
-				?>
