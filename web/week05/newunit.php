@@ -31,12 +31,15 @@
 						<option value="bm">Balanced Magic</option>
 						<option value="gc">Glass Cannon</option> 
 					</select><br/><br/>
-					A-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
+					Activated-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
+					Support-Ability: [php S-Ability lookup goes here.]
+					Reaction-Ability: None. (Level 1 units do not start with Reaction Abilities.)
 			</div>
 		</div>
 		<div class="row">
 			<div class="search col-sm-12">
-					First Starting Skill: Name: <input type="text" name="s1name"><br/><br/>
+					<h2>First Starting Skill</h2>
+					Name: <input type="text" name="s1name"><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1damage" min="0" max="1000" step="10" value="100" size="6"><br/><br/>
 					Damage type: <select name="s1type">
 						<option value="atk">Attack stat damage</option>
@@ -69,13 +72,23 @@
 					</select>
 					by <input type="number" name="s1buffamt" min="0" max="100" step="5" value="0" size="5">%.
 					<br/><br/>
+					Other Effects: <select name="s1other">
+						<option value="none" selected>None.</option>
+						<option value="Knockback">Knockback.</option>
+						<option value="Hits 2 times">Hits 2 times.</option>
+						<option value="1 cell AoE">1 cell AoE.</option>
+						<option value="2 cell AoE">2 cell AoE.</option>
+						<option value="Line-shape area">Line-shape area.</option>
+						<option value="Cone-shape area">Cone-shape area.</option>
+					</select><br/><br/>
 					Range: <input type="number" name="s1range" min="0" max="99" step="1" value="0" size="2"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
 			</div>
 		</div>
 		<div class="row">
 			<div class="search col-sm-12">			
-					Second Starting Skill:Name: <input type="text" name="s2name"><br/><br/>
-					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2damage" min="0" max="1000" step="10" value="100" size="6"><br/><br/>
+					<h2>Second Starting Skill</h2>
+					Name: <input type="text" name="s2name"><br/><br/>
+					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2damage" min="0" max="1000" step="10" value="100" size="6">%<br/><br/>
 					Damage type: <select name="s2type">
 						<option value="atk">Attack stat damage</option>
 						<option value="int">Intelligence stat damage</option>
@@ -107,7 +120,17 @@
 					</select>
 					by <input type="number" name="s2buffamt" min="0" max="100" step="5" value="0" size="5">%.
 					<br/><br/>
+					Other Effects: <select name="s2other">
+						<option value="none" selected>None.</option>
+						<option value="Knockback">Knockback.</option>
+						<option value="Hits 2 times">Hits 2 times.</option>
+						<option value="1 cell AoE">1 cell AoE.</option>
+						<option value="2 cell AoE">2 cell AoE.</option>
+						<option value="Line-shape area">Line-shape area.</option>
+						<option value="Cone-shape area">Cone-shape area.</option>
+					</select><br/><br/>
 					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
+					MP: <span id="mp">0</span>. <input name="mp" style="visibility:hidden;">
 				</form>
 			</div>
 		</div>
