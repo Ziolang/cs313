@@ -31,7 +31,11 @@
 						<option value="bm">Balanced Magic</option>
 						<option value="gc">Glass Cannon</option> 
 					</select><br/><br/>
-					A-Ability: <input type="text" name="aa"><br/><br/>
+					A-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="search col-sm-12">
 					First Starting Skill: Name: <input type="text" name="s1name"><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1damage" min="0" max="1000" step="10" value="100" size="6"><br/><br/>
 					Damage type: <select name="s1type">
@@ -66,7 +70,10 @@
 					by <input type="number" name="s1buffamt" min="0" max="100" step="5" value="0" size="5">%.
 					<br/><br/>
 					Range: <input type="number" name="s1range" min="0" max="99" step="1" value="0" size="2"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
-
+			</div>
+		</div>
+		<div class="row">
+			<div class="search col-sm-12">			
 					Second Starting Skill:Name: <input type="text" name="s2name"><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2damage" min="0" max="1000" step="10" value="100" size="6"><br/><br/>
 					Damage type: <select name="s2type">
