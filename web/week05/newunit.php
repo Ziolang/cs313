@@ -18,11 +18,7 @@
 	</div>
 	<div class="container">
   		<div class="row">
-			<div class="col-sm-2">
-
-
-			</div>
-			<div class="search col-sm-8">
+			<div class="search col-sm-12">
 				<form>
 					<h1>Create new level 1 unit.</h1>
 					Name: <input type="text" name="name"><br/>
@@ -34,7 +30,7 @@
 						<option value="sm">Support Magic</option> 
 						<option value="bm">Balanced Magic</option>
 						<option value="gc">Glass Cannon</option> 
-					</select>
+					</select><br/>
 					A-Ability: <input type="text" name="aa"><br/>
 					First Starting Skill: Name: <input type="text" name="s1name"><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1damage" min="0" max="1000" step="10" value="100" size="6"><br/>
@@ -52,7 +48,7 @@
 						<option value="Freeze">Freeze</option>
 						<option value="Immobilize">Immobilize</option>
 						<option value="Disable">Disable</option>
-					</select>
+					</select><br/>
 					Buffs/Debuffs: <select name="s1buff">
 						<option value="none" selected>None.</option>
 						<option value="Increase">Increase</option>
@@ -87,7 +83,7 @@
 						<option value="Freeze">Freeze</option>
 						<option value="Immobilize">Immobilize</option>
 						<option value="Disable">Disable</option>
-					</select>
+					</select><br/>
 					Buffs/Debuffs: <select name="s2buff">
 						<option value="none" selected>None.</option>
 						<option value="Increase">Increase</option>
@@ -106,10 +102,6 @@
 					<br/>
 					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/>
 				</form>
-			</div>
-			<div class="col-sm-2">
-
-
 			</div>
 		</div>
 
