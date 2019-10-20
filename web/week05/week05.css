@@ -39,8 +39,9 @@ body {
 .search {
 	background-color: #d10000;
 	border: 3px solid #b00000;
-	height:600px;
 	padding:15px;
+	display:block;
+	overflow:auto;
 }
 
 .center {
