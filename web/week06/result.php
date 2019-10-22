@@ -28,7 +28,7 @@
   		echo 'Error!: ' . $ex->getMessage();
   		die();
 	}
-
+    
 	foreach ($db->query("SELECT scripture.*, topic.*, ScriptureToTopics.*
 				FROM scripture 
 				JOIN ScriptureToTopics 

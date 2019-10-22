@@ -1,43 +1,69 @@
+window.onload = function () {
+	document.getElementsByName("s1name")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1damage")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1type")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1status")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1buff")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1buffstat")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1buffamt")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1other")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1range")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2name")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2damage")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2type")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2status")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2buff")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2buffstat")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2buffamt")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2other")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2range")[0].addEventListener("change", calculateMP());
+}
+
 function calculateMP() {
 	var mp1 = 3;
 	var mp2 = 3;
 
 	var temp = 0;
+	r = 0;
+	var other = "";
+	var string = "";
 
-	if (document.getElementById("s1damage").value != 0) {
-		temp = document.getElementById("s1buffamt").value / 10;
+	if (document.getElementsByName("s1damage")[0].value >= 100) {
+		temp = (document.getElementsByName("s1damage")[0].value - 100) / 10;
 
-		if (document.getElementById("s1buffamt").value >= 200)
+		if (document.getElementsByName("s1damage")[0].value >= 200)
 			temp *= 2;
 
 		mp1 += temp;
 		temp = 0;
 	}
-	if (document.getElementById("s2damage").value != 0) {
-		temp = document.getElementById("s2buffamt").value / 10;
+	if (document.getElementsByName("s2damage")[0].value >= 100) {
+		temp = (document.getElementsByName("s2damage")[0].value - 100) / 10;
 
-		if (document.getElementById("s2buffamt").value >= 200)
+		if (document.getElementsByName("s2damage")[0].value >= 200)
 			temp *= 2;
 
 		mp2 += temp;
 		temp = 0;
 	}
 
-	if (document.getElementById("s1status").value != "none") {mp1 += 2;}
-	if (document.getElementById("s2status").value != "none") {mp2 += 2;}
+	if (document.getElementsByName("s1status")[0].value !== "none") {mp1 += 2;}
+	if (document.getElementsByName("s2status")[0].value !== "none") {mp2 += 2;}
 	
-	if (document.getElementById("s1buff").value != "none") {
-		temp = document.getElementById("s1buffamt").value / 10;
-		if (document.getElementById("s1buffstat").value.length > 3) {
+	if (document.getElementsByName("s1buff")[0].value !== "none") {
+		temp = document.getElementsByName("s1buffamt")[0].value / 10;
+		string = "" + document.getElementsByName("s1buffstat")[0].value;
+		if (string.length > 3) {
 			temp *= 2;
 		}
 
 		mp1 += temp;
 		temp = 0;
 	}
-	if (document.getElementById("s2buff").value != "none") {
-		temp = document.getElementById("s2buffamt").value / 10;
-		if (document.getElementById("s2buffstat").value.length > 3) {
+	if (document.getElementsByName("s2buff")[0].value !== "none") {
+		temp = document.getElementsByName("s2buffamt")[0].value / 10;
+		string = "" + document.getElementsByName("s2buffstat")[0].value;
+		if (string.length > 3) {
 			temp *= 2;
 		}
 
@@ -45,31 +71,42 @@ function calculateMP() {
 		temp = 0;
 	}
 
-	var other = document.getElementById("s1other");
-	if (other.value != "none") {
-		var r = document.getElementById("s1range").value;
+	other = document.getElementsByName("s1other")[0];
+	if (other.text !== "None.") {
+		r = document.getElementsByName("s1range")[0].value;
 		if (other.value == "Knockback") { mp1 += 2; }
 		if (other.value == "Hits 2 times") { mp1 *= 2;}
 		if (other.value == "1 cell AoE") { mp1 += 2; }
-		if (other.value == "Line-Shape Area") { mp1 += (r - 2); }
+		if (other.value == "Line-shape area") { mp1 += (r - 2); }
 		if (other.value == "2 cell AoE") { mp1 += 5; }
-		if (other.value == "Cone-Shape Area") { 
-			mp1 += (r * (r - 1)) - 1;
+		if (other.value == "Cone-shape area") { 
+			mp1 += (r * (r - 1));
 		}
 	}
-	var other = document.getElementById("s2other");
-	if (other.value != "none") {
-		var r = document.getElementById("s2range").value;
+	other = document.getElementsByName("s2other")[0];
+	if (other.text !== "None.") {
+		r = document.getElementsByName("s2range")[0].value;
 		if (other.value == "Knockback") { mp2 += 2; }
 		if (other.value == "Hits 2 times") { mp2 *= 2;}
 		if (other.value == "1 cell AoE") { mp2 += 2; }
-		if (other.value == "Line-Shape Area") { mp2 += (r - 2); }
+		if (other.value == "Line-shape area") { mp2 += (r - 2); }
 		if (other.value == "2 cell AoE") { mp2 += 5; }
-		if (other.value == "Cone-Shape Area") { 
+		if (other.value == "Cone-shape area") { 
 			mp2 += (r * (r - 1)) - 1;
 		}
 	}
 
-	document.getElementById("s1mp").innerHTML = "MP: " + mp1 + ".";
-	document.getElementById("s2mp").innerHTML = "MP: " + mp2 + ".";
+	r = document.getElementsByName("s1range")[0].value;
+	if (r >= 3) {
+		mp1 += r - 2;
+	}
+	r = document.getElementsByName("s2range")[0].value;
+	if (r >= 3) {
+		mp2 += r - 2;
+	}
+
+	document.getElementById("s1mp").innerHTML = mp1;
+	document.getElementById("s2mp").innerHTML = mp2;
+	document.getElementsByName("s1mp")[0].value = mp1;
+	document.getElementsByName("s2mp")[0].value = mp2;
 }

@@ -7,9 +7,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  	<script src="newunit.js">
-  		document.getElementById("s1damage").addEventListener("change", calculateMP());
-  	</script>
+  	
 </head>
 <body>
 	<div class="container">
@@ -22,8 +20,8 @@
 			<div class="search col-sm-12">
 				<form>
 					<h1>Create new level 1 unit.</h1>
-					Name: <input type="text" name="name"><br/><br/>
-					Class: <input type="text" name="class"><br/><br/>
+					Name: <input type="text" name="name" required><br/><br/>
+					Class: <input type="text" name="class" required><br/><br/>
 					Stat Style: <select name="stats">
 						<option value="fa">Fast Attacker</option>
 						<option value="ra">Ranged Attacker</option>
@@ -32,7 +30,7 @@
 						<option value="bm">Balanced Magic</option>
 						<option value="gc">Glass Cannon</option> 
 					</select><br/><br/>
-					Activated-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
+					Activated-Ability Name: <input type="text" name="aa" required> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
 					Support-Ability: [php S-Ability lookup goes here.]<br/><br/>
 					Reaction-Ability: None. (Level 1 units do not start with Reaction Abilities.)
 			</div>
@@ -40,15 +38,15 @@
 		<div class="row">
 			<div class="search col-sm-12">
 					<h2>First Starting Skill</h2>
-					Name: <input type="text" name="s1name" onchange="calculateMP()"><br/><br/>
-					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1damage" min="0" max="1000" step="10" value="100" size="6"><br/><br/>
+					Name: <input type="text" name="s1name" onchange="calculateMP()" required><br/><br/>
+					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1damage" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
 					Damage type: <select name="s1type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>
 						<option value="int">Intelligence stat damage</option>
 						<option value="nds">Non-damaging skill</option>
 					</select><br/><br/>
 					Effect(s): Chance of Status Affliction: <select name="s1status" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Bleed">Bleed</option>
 						<option value="Poison">Poison</option>
 						<option value="Burn">Burn</option>
@@ -58,11 +56,11 @@
 						<option value="Disable">Disable</option>
 					</select><br/><br/>
 					Buffs/Debuffs: <select name="s1buff" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Increase">Increase</option>
 						<option value="Decrease">Decrease</option>
 					</select> <select name="s1buffstat" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Atk">Atk</option>
 						<option value="Def">Def</option>
 						<option value="Int">Int</option>
@@ -74,7 +72,7 @@
 					by <input type="number" name="s1buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">%.
 					<br/><br/>
 					Other Effects: <select name="s1other" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Knockback">Knockback.</option>
 						<option value="Hits 2 times">Hits 2 times.</option>
 						<option value="1 cell AoE">1 cell AoE.</option>
@@ -89,7 +87,7 @@
 		<div class="row">
 			<div class="search col-sm-12">			
 					<h2>Second Starting Skill</h2>
-					Name: <input type="text" name="s2name" onchange="calculateMP()"><br/><br/>
+					Name: <input type="text" name="s2name" onchange="calculateMP()" required><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2damage" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()">%<br/><br/>
 					Damage type: <select name="s2type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>
@@ -97,7 +95,7 @@
 						<option value="nds">Non-damaging skill</option>
 					</select><br/><br/>
 					Effect(s): Chance of Status Affliction: <select name="s2status" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Bleed">Bleed</option>
 						<option value="Poison">Poison</option>
 						<option value="Burn">Burn</option>
@@ -107,11 +105,11 @@
 						<option value="Disable">Disable</option>
 					</select><br/><br/>
 					Buffs/Debuffs: <select name="s2buff" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Increase">Increase</option>
 						<option value="Decrease">Decrease</option>
 					</select> <select name="s2buffstat" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Atk">Atk</option>
 						<option value="Def">Def</option>
 						<option value="Int">Int</option>
@@ -123,7 +121,7 @@
 					by <input type="number" name="s2buffamt" min="0" max="100" step="10" value="0" size="5" onchange="calculateMP()">%.
 					<br/><br/>
 					Other Effects: <select name="s2other" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="none">None.</option>
 						<option value="Knockback">Knockback.</option>
 						<option value="Hits 2 times">Hits 2 times.</option>
 						<option value="1 cell AoE">1 cell AoE.</option>
@@ -132,10 +130,11 @@
 						<option value="Cone-shape area">Cone-shape area.</option>
 					</select><br/><br/>
 					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
-					<div id="s2mp">MP: 0.</div> <input name="s2mp" style="visibility:hidden;">
+					MP: <span id="s2mp">0</span>. <input name="s2mp" style="visibility:hidden;">
 				</form>
 			</div>
 		</div>
 
 	</div>
+	<script type='text/javascript' src='newunit.js'></script>
 </body>

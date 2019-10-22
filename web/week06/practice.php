@@ -50,7 +50,7 @@
 				echo '<input type="checkbox" name="topic' . $row['id'] . '" value="' . $row['name'] . '" > '. $row['name'] .' <br/>';
 		}
 		?>
-
+    
 		<br/><input type="submit" value="Search"><br/>
 	</form>
 </body>
