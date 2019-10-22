@@ -36,7 +36,7 @@
   		die();
 	}
 
-	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.book = '$book'") as $row) {
+	foreach ($db->query("SELECT * FROM scripture WHERE scripture.book = '$book'") as $row) {
 	}
 
 ?>

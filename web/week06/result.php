@@ -29,14 +29,14 @@
   		die();
 	}
 
-	foreach ($db->query("SELECT Scriptures.*, topic.* 
-				FROM Scriptures 
+	foreach ($db->query("SELECT scripture.*, topic.*, ScriptureToTopics.*
+				FROM scripture 
 				JOIN ScriptureToTopics 
-				ON Scriptures.id = ScriptureToTopics.scripture_id 
+				ON scripture.id = ScriptureToTopics.scripture_id 
 				JOIN topic
 				ON ScriptureToTopics.topic_id = topic.id") as $row) {
-		echo "<b>" . $row['Scriptures.book'] . " " . $row['Scriptures.chapter'] . ":" . $row['Scriptures.verse'] . " - </b>";
-        echo '"' . $row['Scriptures.content'] . '"<br><br>';
+		echo "<b>" . $row['scripture.book'] . " " . $row['scripture.chapter'] . ":" . $row['scripture.verse'] . " - </b>";
+        echo '"' . $row['scripture.content'] . '"<br><br>';
 	}
 
 ?>
