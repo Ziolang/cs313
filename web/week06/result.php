@@ -28,17 +28,6 @@
   		echo 'Error!: ' . $ex->getMessage();
   		die();
 	}
-    
-	foreach ($db->query("SELECT scripture.*, topic.*, ScriptureToTopics.*
-				FROM scripture 
-				JOIN ScriptureToTopics 
-				ON scripture.id = ScriptureToTopics.scripture_id 
-				JOIN topic
-				ON ScriptureToTopics.topic_id = topic.id
-				GROUP BY scripture.id") as $row) {
-		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " Topics: ". $row['name'] ." </b>";
-        echo '"' . $row['content'] . '"<br><br>';
-	}
 
 foreach ($db->query("SELECT scripture.*, topic.*, ScriptureToTopics.*
 				FROM scripture 
