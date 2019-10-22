@@ -12,8 +12,7 @@
             echo '"' . $row['content'] . '"<br><br>';
 	}*/
 
-	if (isset($_POST['book'])) {
-		try
+	try
 	{
   		$dbUrl = getenv('DATABASE_URL');
 
@@ -39,7 +38,6 @@
 
 	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.book = '$book'") as $row) {
 	}
-}
 
 ?>
 
