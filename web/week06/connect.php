@@ -1,21 +1,29 @@
 <?php
-function get_db() {
+function connect() {
 	$db = NULL;
+
 	try {
-		
-		$dbopts = parse_url($dbUrl);
-		$dbHost = $dbopts["host"];
-		$dbPort = $dbopts["port"];
-		$dbUser = $dbopts["user"];
-		$dbPassword = $dbopts["pass"];
-		$dbName = ltrim($dbopts["path"],'/');
+		$dbUrl = getenv('DATABASE_URL');
+
+		$dbOpts = parse_url($dbUrl);
+
+		$dbHost = $dbOpts["host"];
+		$dbPort = $dbOpts["port"];
+		$dbUser = $dbOpts["user"];
+		$dbPassword = $dbOpts["pass"];
+		$dbName = ltrim($dbOpts["path"],'/');
+
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		$book = $_POST['book'];
 	}
 	catch (PDOException $ex) {
-		echo "Error connecting to DB. Details: $ex";
+		echo 'Error!: ' . $ex->getMessage();
 		die();
 	}
+
 	return $db;
 }
 ?>
