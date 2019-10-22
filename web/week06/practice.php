@@ -38,14 +38,20 @@
 	}
 
 	foreach ($db->query("SELECT * FROM Scriptures WHERE Scriptures.book = '$book'") as $row) {
-		$url = "result.php?" ."id=" . $row['id'];
-		echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </a></b><br/>";
 	}
 }
 
 ?>
 
-	<form name="search" action="practice.php" method="post">
-		Search Book: <input type="text" name="book" /> <input type="submit" value="Search"><br/>
+	<form name="insert" action="practice.php" method="post">
+		Add Scripture: <input type="text" name="book" /> <input type="text" name="chapter" /> <input type="text" name="verse" /> <br/>
+		<input type="textarea" name="comment" />
+		Topic: <?php
+			foreach ($db->query("SELECT * FROM topic") as $row) {
+				echo '<input type="checkbox" name="topic' . $row['id'] . '" value="' . $row['name'] . '" ><br/>';
+		}
+		?>
+
+		<br/><input type="submit" value="Search"><br/>
 	</form>
 </body>
