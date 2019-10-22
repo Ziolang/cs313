@@ -44,8 +44,8 @@
 ?>
 
 	<form name="insert" action="practice.php" method="post">
-		Add Scripture: <input type="text" name="book" /> <input type="text" name="chapter" /> <input type="text" name="verse" /> <br/>
-		<input type="textarea" name="comment" />
+		Add Scripture: Book: <input type="text" name="book" /> Chapter: <input type="text" name="chapter" /> Verse: <input type="text" name="verse" /> <br/>
+		Comment: <input type="textarea" name="comment" />
 		Topic: <?php
 			foreach ($db->query("SELECT * FROM topic") as $row) {
 				echo "test";
