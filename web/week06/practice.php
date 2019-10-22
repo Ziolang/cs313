@@ -43,7 +43,7 @@
 
 	<form name="insert" action="result.php" method="post">
 		Add Scripture: Book: <input type="text" name="book" /> Chapter: <input type="text" name="chapter" /> Verse: <input type="text" name="verse" /> <br/>
-		Comment: <input type="textarea" name="comment" />
+		Content: <input type="textarea" name="content" />
 		Topic: 
 		<?php
 			foreach ($db->query("SELECT * FROM topic") as $row) {
