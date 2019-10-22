@@ -35,8 +35,8 @@
 				ON Scriptures.id = ScriptureToTopics.scripture_id 
 				JOIN topic
 				ON ScriptureToTopics.topic_id = topic.id") as $row) {
-		echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
-        echo '"' . $row['content'] . '"<br><br>';
+		echo "<b>" . $row['Scriptures.book'] . " " . $row['Scriptures.chapter'] . ":" . $row['Scriptures.verse'] . " - </b>";
+        echo '"' . $row['Scriptures.content'] . '"<br><br>';
 	}
 
 ?>
