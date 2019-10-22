@@ -41,7 +41,7 @@
 
 ?>
 
-	<form name="insert" action="practice.php" method="post">
+	<form name="insert" action="result.php" method="post">
 		Add Scripture: Book: <input type="text" name="book" /> Chapter: <input type="text" name="chapter" /> Verse: <input type="text" name="verse" /> <br/>
 		Comment: <input type="textarea" name="comment" />
 		Topic: 
