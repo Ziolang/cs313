@@ -92,7 +92,6 @@
 					Damage type: <select name="s2type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>
 						<option value="int">Intelligence stat damage</option>
-						<option value="nds">Non-damaging skill</option>
 					</select><br/><br/>
 					Effect(s): Chance of Status Affliction: <select name="s2status" onchange="calculateMP()">
 						<option value="None" selected>None</option>
