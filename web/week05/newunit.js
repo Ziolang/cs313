@@ -47,10 +47,10 @@ function calculateMP() {
 		temp = 0;
 	}
 
-	if (document.getElementsByName("s1status")[0].value !== "none") {mp1 += 2;}
-	if (document.getElementsByName("s2status")[0].value !== "none") {mp2 += 2;}
+	if (document.getElementsByName("s1status")[0].value !== "None") {mp1 += 2;}
+	if (document.getElementsByName("s2status")[0].value !== "None") {mp2 += 2;}
 	
-	if (document.getElementsByName("s1buff")[0].value !== "none") {
+	if (document.getElementsByName("s1buff")[0].value !== "None") {
 		temp = document.getElementsByName("s1buffamt")[0].value / 10;
 		string = "" + document.getElementsByName("s1buffstat")[0].value;
 		if (string.length > 3) {
@@ -60,7 +60,7 @@ function calculateMP() {
 		mp1 += temp;
 		temp = 0;
 	}
-	if (document.getElementsByName("s2buff")[0].value !== "none") {
+	if (document.getElementsByName("s2buff")[0].value !== "None") {
 		temp = document.getElementsByName("s2buffamt")[0].value / 10;
 		string = "" + document.getElementsByName("s2buffstat")[0].value;
 		if (string.length > 3) {
@@ -72,7 +72,7 @@ function calculateMP() {
 	}
 
 	other = document.getElementsByName("s1other")[0];
-	if (other.text !== "None.") {
+	if (other.value !== "None") {
 		r = document.getElementsByName("s1range")[0].value;
 		if (other.value == "Knockback") { mp1 += 2; }
 		if (other.value == "Hits 2 times") { mp1 *= 2;}
@@ -84,7 +84,7 @@ function calculateMP() {
 		}
 	}
 	other = document.getElementsByName("s2other")[0];
-	if (other.text !== "None.") {
+	if (other.value !== "None") {
 		r = document.getElementsByName("s2range")[0].value;
 		if (other.value == "Knockback") { mp2 += 2; }
 		if (other.value == "Hits 2 times") { mp2 *= 2;}
@@ -105,8 +105,8 @@ function calculateMP() {
 		mp2 += r - 2;
 	}
 
-	document.getElementById("s1mp").innerHTML = mp1;
-	document.getElementById("s2mp").innerHTML = mp2;
+	document.getElementById("s1mpview").innerHTML = mp1;
+	document.getElementById("s2mpview").innerHTML = mp2;
 	document.getElementsByName("s1mp")[0].value = mp1;
 	document.getElementsByName("s2mp")[0].value = mp2;
 }

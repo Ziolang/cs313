@@ -22,17 +22,15 @@
 	<div class="container">
   		<div class="row">
 			<div class="search col-sm-12">
-				<form>
+				<form action="createdunit.php" method="post">
 					<h1>Create new level 1 unit.</h1>
 					Name: <input type="text" name="name"><br/><br/>
 					Class: <input type="text" name="class"><br/><br/>
 					Stat Style: <select name="stats">
 						<option value="fa">Fast Attacker</option>
 						<option value="ra">Ranged Attacker</option>
-						<option value="da">Defensive Attacker</option>
 						<option value="sm">Support Magic</option> 
-						<option value="bm">Balanced Magic</option>
-						<option value="gc">Glass Cannon</option> 
+						<option value="om">Offensive Magic</option>
 					</select><br/><br/>
 					Activated-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
 					Support-Ability: [php S-Ability lookup goes here.]<br/><br/>
@@ -47,10 +45,9 @@
 					Damage type: <select name="s1type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>
 						<option value="int">Intelligence stat damage</option>
-						<option value="nds">Non-damaging skill</option>
 					</select><br/><br/>
 					Effect(s): Chance of Status Affliction: <select name="s1status" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="None" selected>None</option>
 						<option value="Bleed">Bleed</option>
 						<option value="Poison">Poison</option>
 						<option value="Burn">Burn</option>
@@ -60,12 +57,11 @@
 						<option value="Disable">Disable</option>
 					</select><br/><br/>
 					Buffs/Debuffs: <select name="s1buff" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="None" selected>None</option>
 						<option value="Increase">Increase</option>
 						<option value="Decrease">Decrease</option>
 					</select> <select name="s1buffstat" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
-						<option value="Atk">Atk</option>
+						<option value="Atk" selected>Atk</option>
 						<option value="Def">Def</option>
 						<option value="Int">Int</option>
 						<option value="Spr">Spr</option>
@@ -76,16 +72,16 @@
 					by <input type="number" name="s1buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">%.
 					<br/><br/>
 					Other Effects: <select name="s1other" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
-						<option value="Knockback">Knockback.</option>
-						<option value="Hits 2 times">Hits 2 times.</option>
-						<option value="1 cell AoE">1 cell AoE.</option>
-						<option value="2 cell AoE">2 cell AoE.</option>
+						<option value="None" selected>None</option>
+						<option value="Knockback">Knockback</option>
+						<option value="Hits 2 times">Hits 2 times</option>
+						<option value="1 cell AoE">1 cell AoE</option>
+						<option value="2 cell AoE">2 cell AoE</option>
 						<option value="Line-shape area">Line-shape area.</option>
 						<option value="Cone-shape area">Cone-shape area.</option>
 					</select><br/><br/>
 					Range: <input type="number" name="s1range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
-					MP: <span id="s1mp">0</span>. (MP is auto-defined as you go.) <input name="s1mp" style="visibility:hidden;">
+					MP: <span id="s1mpview">0</span>. (MP is auto-defined as you go.) <input name="s1mp" style="visibility:hidden;">
 			</div>
 		</div>
 		<div class="row">
@@ -134,7 +130,7 @@
 						<option value="Cone-shape area">Cone-shape area.</option>
 					</select><br/><br/>
 					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
-					<div id="s2mp">MP: 0.</div> <input name="s2mp" style="visibility:hidden;">
+					<div id="s2mpview">MP: 0.</div> <input name="s2mp" style="visibility:hidden;">
 				</form>
 			</div>
 		</div>
