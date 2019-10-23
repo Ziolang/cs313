@@ -131,6 +131,8 @@
 					</select><br/><br/>
 					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
 					<div id="s2mpview">MP: 0.</div> <input name="s2mp" style="visibility:hidden;">
+
+					<input type="submit">
 				</form>
 			</div>
 		</div>
