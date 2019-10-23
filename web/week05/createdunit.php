@@ -96,7 +96,7 @@
 				$s2range = $_POST['s2range'];
 				$s2mp = $_POST['s2mp'];
 
-				echo "<b>+ $s1name:</b> $s1dmg $s2effect Range: $s1range. $s1mp MP.<br/>";
+				echo "<b>+ $s2name:</b> $s2dmg $s2effect Range: $s2range. $s2mp MP.<br/>";
 				
 				?>
 			</div>
