@@ -95,7 +95,7 @@
 						<option value="nds">Non-damaging skill</option>
 					</select><br/><br/>
 					Effect(s): Chance of Status Affliction: <select name="s2status" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="None" selected>None</option>
 						<option value="Bleed">Bleed</option>
 						<option value="Poison">Poison</option>
 						<option value="Burn">Burn</option>
@@ -105,11 +105,11 @@
 						<option value="Disable">Disable</option>
 					</select><br/><br/>
 					Buffs/Debuffs: <select name="s2buff" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="None" selected>None</option>
 						<option value="Increase">Increase</option>
 						<option value="Decrease">Decrease</option>
 					</select> <select name="s2buffstat" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="None" selected>None</option>
 						<option value="Atk">Atk</option>
 						<option value="Def">Def</option>
 						<option value="Int">Int</option>
@@ -121,7 +121,7 @@
 					by <input type="number" name="s2buffamt" min="0" max="100" step="10" value="0" size="5" onchange="calculateMP()">%.
 					<br/><br/>
 					Other Effects: <select name="s2other" onchange="calculateMP()">
-						<option value="none" selected>None.</option>
+						<option value="None" selected>None</option>
 						<option value="Knockback">Knockback.</option>
 						<option value="Hits 2 times">Hits 2 times.</option>
 						<option value="1 cell AoE">1 cell AoE.</option>
