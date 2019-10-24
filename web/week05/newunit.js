@@ -1,24 +1,3 @@
-window.onload = function () {
-	document.getElementsByName("s1name")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1dmg")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1type")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1status")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1buff")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1buffstat")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1buffamt")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1other")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1range")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2name")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2dmg")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2type")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2status")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2buff")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2buffstat")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2buffamt")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2other")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2range")[0].addEventListener("change", calculateMP());
-}
-
 function calculateMP() {
 	var mp1 = 3;
 	var mp2 = 3;
