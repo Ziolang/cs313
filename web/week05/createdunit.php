@@ -61,31 +61,37 @@
 				if ($_POST['s1dmg'] !== 0) {
 					$s1dmg = $_POST['s1dmg'] . "% ". $_POST['s1type'] ." Damage. ";
 				}
-				echo "s1Damage: $s1dmg<br/>";
+				
 				$s1stat = $_POST['s1stat'];
-				$s1effect1 = "Chance of " . $_POST['s1status'] . ". ";
-				$s1effect2 = $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . ".% ";
-				$s1effect3 = $_POST['s1other'] . ".";
+				$s1effect = "";
+				if ($_POST['s1status'] !== 0) {
+					$s1effect .= "Chance of " . $_POST['s1status'] . ". ";
+				}
+				if ($_POST['s1buff'] !== 0) {
+					$s1effect .= $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . "%. ";
+				}
+				if ($_POST['s1other'] !== 0) {
+					$s1effect .= $_POST['s1other'] . ".";
+				}
 				
 				$s1range = $_POST['s1range'];
 				$s1mp = $_POST['s1mp'];
 
-				echo "<b>+ $s1name:</b> $s1dmg $s1effect1
-				 $s1effect2 $s1effect3 Range: $s1range. $s1mp MP.<br/>";
+				echo "<b>+ $s1name:</b> $s1dmg $s1effect Range: $s1range. $s1mp MP.<br/>";
 
 				$s2name = $_POST['s2name'];
 				$s2dmg = "";
 				if ($_POST['s2dmg'] !== 0) {
 					$s2dmg = $_POST['s2dmg'] . "% ". $_POST['s2type'] ." Damage. ";
 				}
-				echo "s2Damage: $s2dmg<br/>";
+
 				$s2stat = $_POST['s2stat'];
 				$s2effect = "";
 				if ($_POST['s2status'] !== 0) {
 					$s2effect .= "Chance of " . $_POST['s2status'] . ". ";
 				}
 				if ($_POST['s2buff'] !== 0) {
-					$s2effect .= $_POST['s2buff'] . " " . $_POST['s2buffstat'] . " by " . $_POST['s2buffamt'] . ".% ";
+					$s2effect .= $_POST['s2buff'] . " " . $_POST['s2buffstat'] . " by " . $_POST['s2buffamt'] . "%. ";
 				}
 				if ($_POST['s2other'] !== 0) {
 					$s2effect .= $_POST['s2other'] . ".";
@@ -94,8 +100,6 @@
 				$s2mp = $_POST['s2mp'];
 
 				echo "<b>+ $s2name:</b> $s2dmg $s2effect Range: $s2range. $s2mp MP.<br/>";
-
-				echo $_POST['s1status'] . $_POST['s1buff'] . $_POST['s1buffstat'] . $_POST['s1buffamt'] .  $_POST['s1other'];
 				
 				?>
 			</div>
