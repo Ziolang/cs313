@@ -44,6 +44,40 @@ $db = connect();?>
 		</div>
 		<div class="row">
 			<div class="search col-sm-12">
+				<h2>Equipment</h2>
+				Weapon: <select name="w1">
+					<?php 
+						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Weapon'") as $w1) {
+							echo '<option value="' . $w1['id'] . '">' . $w1['name'] . ": " . $w1['effect'] . "</option>";
+						}
+					?>
+					</select><br/><br/>
+				If unit has Dual Wield, A second weapon may be used.
+				Weapon2: <select name="w2">
+					<?php 
+						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Weapon'") as $w2) {
+							echo '<option value="' . $w2['id'] . '">' . $w2['name'] . ": " . $w2['effect'] . "</option>";
+						}
+					?>
+					</select><br/><br/>
+				Armor: <select name="ar">
+					<?php 
+						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Armor'") as $ar) {
+							echo '<option value="' . $ar['id'] . '">' . $ar['name'] . ": " . $ar['effect'] . "</option>";
+						}
+					?>
+					</select><br/><br/>
+				Accessory: <select name="ac">
+					<?php 
+						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Accessory'") as $ac) {
+							echo '<option value="' . $ac['id'] . '">' . $ac['name'] . ": " . $ac['effect'] . "</option>";
+						}
+					?>
+					</select><br/><br/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="search col-sm-12">
 					<h2>First Starting Skill</h2>
 					Name: <input type="text" name="s1name" onchange="calculateMP()"><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
