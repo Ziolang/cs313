@@ -47,10 +47,10 @@ function calculateMP() {
 		temp = 0;
 	}
 
-	if (document.getElementsByName("s1status")[0].value !== "None") {mp1 += 2;}
-	if (document.getElementsByName("s2status")[0].value !== "None") {mp2 += 2;}
+	if (document.getElementsByName("s1status")[0].value != 0) {mp1 += 2;}
+	if (document.getElementsByName("s2status")[0].value != 0) {mp2 += 2;}
 	
-	if (document.getElementsByName("s1buff")[0].value !== "None") {
+	if (document.getElementsByName("s1buff")[0].value != 0) {
 		temp = document.getElementsByName("s1buffamt")[0].value / 10;
 		string = "" + document.getElementsByName("s1buffstat")[0].value;
 		if (string.length > 3) {
@@ -60,7 +60,7 @@ function calculateMP() {
 		mp1 += temp;
 		temp = 0;
 	}
-	if (document.getElementsByName("s2buff")[0].value !== "None") {
+	if (document.getElementsByName("s2buff")[0].value != 0) {
 		temp = document.getElementsByName("s2buffamt")[0].value / 10;
 		string = "" + document.getElementsByName("s2buffstat")[0].value;
 		if (string.length > 3) {
@@ -72,7 +72,7 @@ function calculateMP() {
 	}
 
 	other = document.getElementsByName("s1other")[0];
-	if (other.value !== "None") {
+	if (other.value != 0) {
 		r = document.getElementsByName("s1range")[0].value;
 		if (other.value == "Knockback") { mp1 += 2; }
 		if (other.value == "Hits 2 times") { mp1 *= 2;}
@@ -84,7 +84,7 @@ function calculateMP() {
 		}
 	}
 	other = document.getElementsByName("s2other")[0];
-	if (other.value !== "None") {
+	if (other.value != 0) {
 		r = document.getElementsByName("s2range")[0].value;
 		if (other.value == "Knockback") { mp2 += 2; }
 		if (other.value == "Hits 2 times") { mp2 *= 2;}
