@@ -88,9 +88,9 @@
 			<div class="search col-sm-12">			
 					<h2>Second Starting Skill</h2>
 					Name: <input type="text" name="s2name" onchange="calculateMP()"><br/><br/>
-					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()">%<br/><br/>
+					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
 					Damage type: <select name="s2type" onchange="calculateMP()">
-						<option value="atk">Attack stat damage</option>
+						<option value="atk">Attack stat damage</option>s
 						<option value="int">Intelligence stat damage</option>
 					</select><br/><br/>
 					Effect(s): Chance of Status Affliction: <select name="s2status" onchange="calculateMP()">
@@ -108,7 +108,7 @@
 						<option value="Increase">Increase</option>
 						<option value="Decrease">Decrease</option>
 					</select> <select name="s2buffstat" onchange="calculateMP()">
-						<option value="Atk">Atk</option>
+						<option value="Atk" selected>Atk</option>
 						<option value="Def">Def</option>
 						<option value="Int">Int</option>
 						<option value="Spr">Spr</option>
@@ -116,19 +116,19 @@
 						<option value="Int and Spr">Int and Spr</option>
 						<option value="Def and Spr">Def and Spr</option>
 					</select>
-					by <input type="number" name="s2buffamt" min="0" max="100" step="10" value="0" size="5" onchange="calculateMP()">%.
+					by <input type="number" name="s2buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">%.
 					<br/><br/>
 					Other Effects: <select name="s2other" onchange="calculateMP()">
 						<option value="0" selected>None</option>
-						<option value="Knockback">Knockback.</option>
-						<option value="Hits 2 times">Hits 2 times.</option>
-						<option value="1 cell AoE">1 cell AoE.</option>
-						<option value="2 cell AoE">2 cell AoE.</option>
+						<option value="Knockback">Knockback</option>
+						<option value="Hits 2 times">Hits 2 times</option>
+						<option value="1 cell AoE">1 cell AoE</option>
+						<option value="2 cell AoE">2 cell AoE</option>
 						<option value="Line-shape area">Line-shape area.</option>
 						<option value="Cone-shape area">Cone-shape area.</option>
 					</select><br/><br/>
 					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
-					<div id="s2mpview">MP: 0.</div> <input name="s2mp" style="visibility:hidden;">
+					MP: <span id="s2mpview">0</span>. (MP is auto-defined as you go.) <input name="s2mp" style="visibility:hidden;">
 
 					<input type="submit">
 				</form>
