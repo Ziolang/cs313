@@ -30,10 +30,10 @@
 				$class = $_POST['class'];
 				$aa = $_POST['aa'];
 				$sa = "PENDING";
-				$w1 = "";
-				$w2 = "";
-				$ar = "";
-				$ac = "";
+				$w1 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w1'];
+				$w2 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w2'];
+				$ar = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ar'];
+				$ac = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ac'];
 				$lvl = 1;
 				$exp = 0;
 				$hp = 25; $mp = 15; $atk = 4; $def = 3; $int = 2; 
@@ -56,12 +56,14 @@
 				$hp<br/>$mp<br/>$atk<br/>$def<br/>$int<br/>
 				$spr<br/>$move<br/>$crit<br/>$eva<br/>";
 
+				echo "$w1['name'] $w2['name'] $ar['name'] $ac['name']";
+
 				$s1name = $_POST['s1name'];
 				$s1dmg = "";
 				if ($_POST['s1dmg'] !== 0) {
 					$s1dmg = $_POST['s1dmg'] . "% ". $_POST['s1type'] ." Damage. ";
 				}
-				
+
 				$s1stat = $_POST['s1stat'];
 				$s1effect = "";
 				if ($_POST['s1status'] !== 0) {
