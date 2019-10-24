@@ -61,6 +61,7 @@
 				if ($_POST['s1dmg'] != 0) {
 					$s1dmg = $_POST['s1dmg'] . "% ". $_POST['s1type'] ." Damage. ";
 				}
+				echo "s1Damage: $s1dmg<br/>";
 				$s1stat = $_POST['s1stat'];
 				$s1effect = "";
 				if ($_POST['s1status'] != "None") {
@@ -82,6 +83,7 @@
 				if ($_POST['s2dmg'] != 0) {
 					$s2dmg += $_POST['s2dmg'] . "% ". $_POST['s2type'] ." Damage. ";
 				}
+				echo "s2Damage: $s1dmg<br/>";
 				$s2stat = $_POST['s2stat'];
 				$s2effect = "";
 				if ($_POST['s2status'] != "None") {
