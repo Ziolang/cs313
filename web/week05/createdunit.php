@@ -100,7 +100,7 @@
 
 				echo "<b>+ $s2name:</b> $s2dmg $s2effect Range: $s2range. $s2mp MP.<br/>";
 
-				echo $_POST["s1status"] . $_POST["s1buff"] . $_POST["s1bufftype"] . $_POST["s1buffamt"] .  . $_POST["s1other"];
+				/*echo $_POST["s1status"] . $_POST["s1buff"] . $_POST["s1bufftype"] . $_POST["s1buffamt"] .  . $_POST["s1other"];*/
 				
 				?>
 			</div>
