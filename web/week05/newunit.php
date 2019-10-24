@@ -35,7 +35,7 @@ $db = connect();?>
 					Support-Ability: <select name="sa">
 					<?php 
 						foreach ($db->query("SELECT * FROM Abilities") as $sa) {
-							echo '<option value="' . $sa['id'] . "'><b>" . $sa['name'] . ":</b> " . $sa['effect'];
+							echo '<option value="' . $sa['id'] . "'><b>" . $sa['name'] . ":</b> " . $sa['effect'] . "</option>";
 						}
 					?><br/><br/>
 					Reaction-Ability: None. (Level 1 units do not start with Reaction Abilities.)
