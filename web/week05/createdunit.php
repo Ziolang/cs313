@@ -58,9 +58,9 @@
 
 				$s1name = $_POST['s1name'];
 				$s1dmg = "";
-				if ($_POST['s1dmg'] != 0) {
+				/*if ($_POST['s1dmg'] != 0) {*/
 					$s1dmg = $_POST['s1dmg'] . "% ". $_POST['s1type'] ." Damage. ";
-				}
+				/*}*/
 				echo "s1Damage: $s1dmg<br/>";
 				$s1stat = $_POST['s1stat'];
 				$s1effect = "";
