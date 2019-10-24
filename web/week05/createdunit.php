@@ -56,7 +56,7 @@
 				$hp<br/>$mp<br/>$atk<br/>$def<br/>$int<br/>
 				$spr<br/>$move<br/>$crit<br/>$eva<br/>";
 
-				echo $w1['name'] . $w2['name'] . $ar['name'] . $ac['name'];
+				echo $w1[0]['name'] . $w2[0]['name'] . $ar[0]['name'] . $ac[0]['name'];
 
 				$s1name = $_POST['s1name'];
 				$s1dmg = "";
