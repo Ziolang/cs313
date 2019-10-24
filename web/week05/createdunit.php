@@ -80,7 +80,7 @@
 				$s2name = $_POST['s2name'];
 				$s2dmg = "";
 				if ($_POST['s2dmg'] !== 0) {
-					$s2dmg = $_POST['s2dmg'] . "% ". $_POST['s2type'] ." Damage. ";
+					$s2dmg += $_POST['s2dmg'] . "% ". $_POST['s2type'] ." Damage. ";
 				}
 				$s2stat = $_POST['s2stat'];
 				$s2effect = "";

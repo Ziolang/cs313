@@ -108,7 +108,6 @@
 						<option value="Increase">Increase</option>
 						<option value="Decrease">Decrease</option>
 					</select> <select name="s2buffstat" onchange="calculateMP()">
-						<option value="None" selected>None</option>
 						<option value="Atk">Atk</option>
 						<option value="Def">Def</option>
 						<option value="Int">Int</option>
