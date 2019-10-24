@@ -76,6 +76,8 @@
 				$s1range = $_POST['s1range'];
 				$s1mp = $_POST['s1mp'];
 
+				echo "s1effect: $s1effect";
+
 				echo "<b>+ $s1name:</b> $s1dmg $s1effect Range: $s1range. $s1mp MP.<br/>";
 
 				$s2name = $_POST['s2name'];
