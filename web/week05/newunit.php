@@ -1,4 +1,5 @@
-<?php include "connect.php";?>
+<?php include "connect.php";
+$db = connect();?>
 
 <!DOCTYPE html>
 <head>
