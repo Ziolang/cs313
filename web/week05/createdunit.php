@@ -30,10 +30,6 @@
 				$class = $_POST['class'];
 				$aa = $_POST['aa'];
 				$sa = "PENDING";
-				$w1 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w1']);
-				$w2 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w2']);
-				$ar = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ar']);
-				$ac = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ac']);
 				$lvl = 1;
 				$exp = 0;
 				$hp = 25; $mp = 15; $atk = 4; $def = 3; $int = 2; 
@@ -56,7 +52,18 @@
 				$hp<br/>$mp<br/>$atk<br/>$def<br/>$int<br/>
 				$spr<br/>$move<br/>$crit<br/>$eva<br/>";
 
-				echo $w1[0]['name'] . $w2[0]['name'] . $ar[0]['name'] . $ac[0]['name'];
+				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w1']) as $w1) {
+					echo 'Weapon1: ' . $w1['id'] . '">' . $w1['name'] . " (" . $w1['effect'] . ")";
+				}
+				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w2']) as $w2) {
+					echo 'Weapon1: ' . $w2['id'] . '">' . $w2['name'] . " (" . $w2['effect'] . ")";
+				}
+				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ar']) as $ar) {
+					echo 'Weapon1: ' . $ar['id'] . '">' . $ar['name'] . " (" . $ar['effect'] . ")";
+				}
+				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ac']) as $ac) {
+					echo 'Weapon1: ' . $ac['id'] . '">' . $ac['name'] . " (" . $ac['effect'] . ")";
+				}
 
 				$s1name = $_POST['s1name'];
 				$s1dmg = "";
