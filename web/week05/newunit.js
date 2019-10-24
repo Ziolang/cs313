@@ -29,7 +29,7 @@ function calculateMP() {
 	var string = "";
 
 	if (document.getElementsByName("s1dmg")[0].value >= 100) {
-		temp = (document.getElementsByName("s1damage")[0].value - 100) / 10;
+		temp = (document.getElementsByName("s1dmg")[0].value - 100) / 10;
 
 		if (document.getElementsByName("s1dmg")[0].value >= 200)
 			temp *= 2;
