@@ -53,16 +53,16 @@
 				$spr<br/>$move<br/>$crit<br/>$eva<br/>";
 
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w1']) as $w1) {
-					echo 'Weapon1: ' . $w1['id'] . '">' . $w1['name'] . " (" . $w1['effect'] . ")";
+					echo 'Weapon1: '. '">' . $w1['name'] . " (" . $w1['effect'] . ")<br/>";
 				}
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w2']) as $w2) {
-					echo 'Weapon1: ' . $w2['id'] . '">' . $w2['name'] . " (" . $w2['effect'] . ")";
+					echo 'Weapon2: ' . $w2['name'] . " (" . $w2['effect'] . ")<br/>";
 				}
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ar']) as $ar) {
-					echo 'Weapon1: ' . $ar['id'] . '">' . $ar['name'] . " (" . $ar['effect'] . ")";
+					echo 'Armor: '. '">' . $ar['name'] . " (" . $ar['effect'] . ")<br/>";
 				}
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ac']) as $ac) {
-					echo 'Weapon1: ' . $ac['id'] . '">' . $ac['name'] . " (" . $ac['effect'] . ")";
+					echo 'Accessory: '. '">' . $ac['name'] . " (" . $ac['effect'] . ")<br/>";
 				}
 
 				$s1name = $_POST['s1name'];
