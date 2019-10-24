@@ -1,6 +1,6 @@
 window.onload = function () {
 	document.getElementsByName("s1name")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s1damage")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s1dmg")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s1type")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s1status")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s1buff")[0].addEventListener("change", calculateMP());
@@ -9,7 +9,7 @@ window.onload = function () {
 	document.getElementsByName("s1other")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s1range")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s2name")[0].addEventListener("change", calculateMP());
-	document.getElementsByName("s2damage")[0].addEventListener("change", calculateMP());
+	document.getElementsByName("s2dmg")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s2type")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s2status")[0].addEventListener("change", calculateMP());
 	document.getElementsByName("s2buff")[0].addEventListener("change", calculateMP());
@@ -28,19 +28,19 @@ function calculateMP() {
 	var other = "";
 	var string = "";
 
-	if (document.getElementsByName("s1damage")[0].value >= 100) {
+	if (document.getElementsByName("s1dmg")[0].value >= 100) {
 		temp = (document.getElementsByName("s1damage")[0].value - 100) / 10;
 
-		if (document.getElementsByName("s1damage")[0].value >= 200)
+		if (document.getElementsByName("s1dmg")[0].value >= 200)
 			temp *= 2;
 
 		mp1 += temp;
 		temp = 0;
 	}
-	if (document.getElementsByName("s2damage")[0].value >= 100) {
-		temp = (document.getElementsByName("s2damage")[0].value - 100) / 10;
+	if (document.getElementsByName("s2dmg")[0].value >= 100) {
+		temp = (document.getElementsByName("s2dmg")[0].value - 100) / 10;
 
-		if (document.getElementsByName("s2damage")[0].value >= 200)
+		if (document.getElementsByName("s2dmg")[0].value >= 200)
 			temp *= 2;
 
 		mp2 += temp;
