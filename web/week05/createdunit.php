@@ -64,15 +64,15 @@
 				echo "s1Damage: $s1dmg<br/>";
 				$s1stat = $_POST['s1stat'];
 				$s1effect = "";
-				if ($_POST['s1status'] != 0) {
+				/*if ($_POST['s1status'] != 0) {*/
 					$s1effect += "Chance of " . $_POST['s1status'] . ". ";
-				}
-				if ($_POST['s1buff'] != 0) {
+				/*}*/
+				/*if ($_POST['s1buff'] != 0) {*/
 					$s1effect += $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . ".% ";
-				}
-				if ($_POST['s1other'] != 0) {
+				/*}*/
+				/*if ($_POST['s1other'] != 0) {*/
 					$s1effect += $_POST['s1other'] . ".";
-				}
+				/*}*/
 				$s1range = $_POST['s1range'];
 				$s1mp = $_POST['s1mp'];
 
