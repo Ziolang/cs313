@@ -48,7 +48,7 @@ $db = connect();?>
 				Weapon: <select name="w1">
 					<?php 
 						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Weapon'") as $w1) {
-							echo '<option value="' . $w1['id'] . '">' . $w1['name'] . ": " . $w1['effect'] . "</option>";
+							echo '<option value="' . $w1['id'] . '">' . $w1['name'] . " (" . $w1['effect'] . ")</option>";
 						}
 					?>
 					</select><br/><br/>
@@ -56,21 +56,21 @@ $db = connect();?>
 				Weapon2: <select name="w2">
 					<?php 
 						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Weapon'") as $w2) {
-							echo '<option value="' . $w2['id'] . '">' . $w2['name'] . ": " . $w2['effect'] . "</option>";
+							echo '<option value="' . $w2['id'] . '">' . $w2['name'] . " (" . $w2['effect'] . ")</option>";
 						}
 					?>
 					</select><br/><br/>
 				Armor: <select name="ar">
 					<?php 
 						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Armor'") as $ar) {
-							echo '<option value="' . $ar['id'] . '">' . $ar['name'] . ": " . $ar['effect'] . "</option>";
+							echo '<option value="' . $ar['id'] . '">' . $ar['name'] . " (" . $ar['effect'] . ")</option>";
 						}
 					?>
 					</select><br/><br/>
 				Accessory: <select name="ac">
 					<?php 
 						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Accessory'") as $ac) {
-							echo '<option value="' . $ac['id'] . '">' . $ac['name'] . ": " . $ac['effect'] . "</option>";
+							echo '<option value="' . $ac['id'] . '">' . $ac['name'] . " (" . $ac['effect'] . ")</option>";
 						}
 					?>
 					</select><br/><br/>
