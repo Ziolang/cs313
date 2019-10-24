@@ -30,10 +30,10 @@
 				$class = $_POST['class'];
 				$aa = $_POST['aa'];
 				$sa = "PENDING";
-				$w1 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w1'];
-				$w2 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w2'];
-				$ar = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ar'];
-				$ac = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ac'];
+				$w1 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w1']);
+				$w2 = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['w2']);
+				$ar = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ar']);
+				$ac = $db->query("SELECT * FROM Equips WHERE id =" . $_POST['ac']);
 				$lvl = 1;
 				$exp = 0;
 				$hp = 25; $mp = 15; $atk = 4; $def = 3; $int = 2; 
