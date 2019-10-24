@@ -63,22 +63,17 @@
 				}
 				echo "s1Damage: $s1dmg<br/>";
 				$s1stat = $_POST['s1stat'];
-				$s1effect = " ";
-				if ($_POST['s1status'] != 0) {
-					$s1effect .= "Chance of " . $_POST['s1status'] . ". ";
-				}
-				if ($_POST['s1buff'] != 0) {
-					$s1effect .= $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . ".% ";
-				}
-				if ($_POST['s1other'] != 0) {
-					$s1effect .= $_POST['s1other'] . ".";
-				}
+				$s1effect1 = "Chance of " . $_POST['s1status'] . ". ";
+				$s1effect2 = $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . ".% ";
+				$s1effect3 = $_POST['s1other'] . ".";
+				
 				$s1range = $_POST['s1range'];
 				$s1mp = $_POST['s1mp'];
 
 				echo "s1effect: $s1effect";
 
-				echo "<b>+ $s1name:</b> $s1dmg $s1effect Range: $s1range. $s1mp MP.<br/>";
+				echo "<b>+ $s1name:</b> $s1dmg $s1effect1
+				 $s1effect2 $s1effect3 Range: $s1range. $s1mp MP.<br/>";
 
 				$s2name = $_POST['s2name'];
 				$s2dmg = "";
