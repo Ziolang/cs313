@@ -63,7 +63,7 @@
 				}
 				echo "s1Damage: $s1dmg<br/>";
 				$s1stat = $_POST['s1stat'];
-				$s1effect = "";
+				$s1effect = " ";
 				if ($_POST['s1status'] != 0) {
 					$s1effect .= "Chance of " . $_POST['s1status'] . ". ";
 				}
