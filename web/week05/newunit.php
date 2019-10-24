@@ -33,7 +33,12 @@
 						<option value="om">Offensive Magic</option>
 					</select><br/><br/>
 					Activated-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
-					Support-Ability: [php S-Ability lookup goes here.]<br/><br/>
+					Support-Ability: <select name="sa">
+					<?php 
+						foreach ($db->query("SELECT * FROM Abilities") as $sa) {
+							echo '<option value="' . $sa['id'] . "'><b>" . $sa['name'] . ":</b> " . $sa['effect'];
+						}
+					?><br/><br/>
 					Reaction-Ability: None. (Level 1 units do not start with Reaction Abilities.)
 			</div>
 		</div>
