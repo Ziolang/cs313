@@ -83,12 +83,12 @@
 				if ($_POST['s2dmg'] != 0) {
 					$s2dmg += $_POST['s2dmg'] . "% ". $_POST['s2type'] ." Damage. ";
 				}
-				echo "s2Damage: $s1dmg<br/>";
+				echo "s2Damage: $s2dmg<br/>";
 				$s2stat = $_POST['s2stat'];
 				$s2effect = "";
-				if ($_POST['s2status'] != 0) {
+				/*if ($_POST['s2status'] != 0) {*/
 					$s2effect += "Chance of " . $_POST['s2status'] . ". ";
-				}
+				/*}*/
 				if ($_POST['s2buff'] != 0) {
 					$s2effect += $_POST['s2buff'] . " " . $_POST['s2buffstat'] . " by " . $_POST['s2buffamt'] . ".% ";
 				}

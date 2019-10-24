@@ -41,7 +41,7 @@
 			<div class="search col-sm-12">
 					<h2>First Starting Skill</h2>
 					Name: <input type="text" name="s1name" onchange="calculateMP()"><br/><br/>
-					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1dmg" min="0" max="1000" step="10" value="100" size="6"><br/><br/>
+					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
 					Damage type: <select name="s1type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>s
 						<option value="int">Intelligence stat damage</option>
