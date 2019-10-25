@@ -207,7 +207,7 @@ catch (Exception $ex)
 	die();
 }
 // finally, redirect them to a new page to actually show the topics
-header("Location: unit.php?=" . $id);
+header("Location: unit.php?id=" . $id);
 die();
 
 				
