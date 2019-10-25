@@ -131,10 +131,12 @@
 	// We do this by preparing the query with placeholder values
 	$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 	$statement = $db->prepare($query);
+	$s1damage = $_POST['s1dmg'];
+	$s2damage = $_POST['s1dmg'];
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
 	$statement->bindValue(':name', $s1name);
-	$statement->bindValue(':dmg', $s1dmg);
+	$statement->bindValue(':dmg', $s1damage);
 	$statement->bindValue(':stat', $s1stat);
 	$statement->bindValue(':effect', $s1effect);
 	$statement->bindValue(':range', $s1range);
@@ -146,7 +148,7 @@
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
 	$statement->bindValue(':name', $s2name);
-	$statement->bindValue(':dmg', $s2dmg);
+	$statement->bindValue(':dmg', $s2damage);
 	$statement->bindValue(':stat', $s2stat);
 	$statement->bindValue(':effect', $s2effect);
 	$statement->bindValue(':range', $s2range);
