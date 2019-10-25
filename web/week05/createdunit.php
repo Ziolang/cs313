@@ -133,7 +133,7 @@
 
 	</div>
 <?php 
-/*
+
 try
 {
 	// Add the Scripture
@@ -172,23 +172,25 @@ try
 	$statement->bindValue(':name', $name);
 	$statement->bindValue(':class', $class);
 	$statement->bindValue(':aability', $aa);
-	$statement->bindValue(':sability', $sa);
-	$statement->bindValue(':weapon1', $s1mp);
-	$statement->bindValue(':weapon2', $s1name);
-	$statement->bindValue(':armor', $s1dmg);
-	$statement->bindValue(':accessory', $s1stat);
-	$statement->bindValue(':lvl', $s1effect);
-	$statement->bindValue(':exp', $s1range);
-	$statement->bindValue(':hp', $s1mp);
-	$statement->bindValue(':mp', $s1mp);
-	$statement->bindValue(':atk', $s1name);
-	$statement->bindValue(':def', $s1dmg);
-	$statement->bindValue(':int', $s1stat);
-	$statement->bindValue(':spr', $s1effect);
-	$statement->bindValue(':move', $s1range);
-	$statement->bindValue(':crit', $s1mp);
-	$statement->bindValue(':eva', $s1mp);
+	$statement->bindValue(':sability', $said);
+	$statement->bindValue(':weapon1', $w1id);
+	$statement->bindValue(':weapon2', $w2id);
+	$statement->bindValue(':armor', $arid);
+	$statement->bindValue(':accessory', $acid);
+	$statement->bindValue(':lvl', $lvl);
+	$statement->bindValue(':exp', $exp);
+	$statement->bindValue(':hp', $hp);
+	$statement->bindValue(':mp', $mp);
+	$statement->bindValue(':atk', $atk);
+	$statement->bindValue(':def', $def);
+	$statement->bindValue(':int', $int);
+	$statement->bindValue(':spr', $spr);
+	$statement->bindValue(':move', $move);
+	$statement->bindValue(':crit', $crit);
+	$statement->bindValue(':eva', $eva);
 	$statement->execute();
+
+	$id = $statement->lastInsertId();
 }
 catch (Exception $ex)
 {
@@ -196,7 +198,7 @@ catch (Exception $ex)
 	die();
 }
 // finally, redirect them to a new page to actually show the topics
-header("Location: showTopics.php");
-die();*/
+header("Location: unit.php?=" . $id);
+die();
 ?>
 </body>
