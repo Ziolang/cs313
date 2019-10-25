@@ -143,6 +143,8 @@
 	$statement->bindValue(':mp', $s1mp);
 	$statement->execute();
 
+	$sk1 = $statement->lastInsertId();
+
 	$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 	$statement = $db->prepare($query);
 	// Now we bind the values to the placeholders. This does some nice things
@@ -155,6 +157,20 @@
 	$statement->bindValue(':mp', $s2mp);
 	$statement->execute();
 
+	$sk2 = $statement->lastInsertId();
+
+	$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
+	$statement = $db->prepare($query);
+
+	// Now we bind the values to the placeholders. This does some nice things
+	// including sanitizing the input with regard to sql commands.
+	$statement->bindValue(':name', $class);
+	$statement->bindValue(':dmg', $skill1);
+	$statement->bindValue(':stat', $skill2);
+	$statement->execute();
+
+	$aaid = $statement->lastInsertId();
+
 	$query = 'INSERT INTO Units(name, class, aability, sability, weapon1, weapon2, armor, accessory, lvl, exp, hp, mp, atk, def, int, spr, move, crit, eva) 
 		VALUES(:name, :class, :aability, :sability, :weapon1, 
 			:weapon2, :armor, :accessory, :lvl,
@@ -164,7 +180,7 @@
 	// including sanitizing the input with regard to sql commands.
 	$statement->bindValue(':name', $name);
 	$statement->bindValue(':class', $class);
-	$statement->bindValue(':aability', $aa);
+	$statement->bindValue(':aability', $aaid);
 	$statement->bindValue(':sability', $said);
 	$statement->bindValue(':weapon1', $w1id);
 	$statement->bindValue(':weapon2', $w2id);
