@@ -66,7 +66,7 @@
 					echo 'Weapon2: ' . $w2['name'] . " (" . $w2['effect'] . ")<br/>";
 					$w2id = $w2['id'];
 				}
-				else ( $w2id = NULL; )
+				else { $w2id = NULL; }
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ar']) as $ar) {
 					echo 'Armor: ' . $ar['name'] . " (" . $ar['effect'] . ")<br/>";
 					$arid = $ar['id'];
@@ -124,19 +124,8 @@
 				$s2mp = $_POST['s2mp'];
 
 				echo "<b>+ $s2name:</b> $s2dmg $s2effect Range: $s2range. $s2mp MP.<br/>";
-				
-				?>
-			</div>
-			<div class="col-sm-2">
 
-
-			</div>
-		</div>
-
-	</div>
-<?php 
-
-try
+				try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
@@ -202,5 +191,15 @@ catch (Exception $ex)
 // finally, redirect them to a new page to actually show the topics
 header("Location: unit.php?=" . $id);
 die();
-?>
+
+				
+				?>
+			</div>
+			<div class="col-sm-2">
+
+
+			</div>
+		</div>
+
+	</div>
 </body>
