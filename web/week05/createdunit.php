@@ -90,22 +90,22 @@
 	try	{
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
-		$statement = $db->prepare($query);
+		$query1 = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
+		$statement1 = $db->prepare($query1);
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
-		$statement->bindValue(':name', $s1name);
-		$statement->bindValue(':dmg', $s1dmg);
-		$statement->bindValue(':stat', $s1type);
-		$statement->bindValue(':effect', $s1effect);
-		$statement->bindValue(':range', $s1range);
-		$statement->bindValue(':mp', $s1mp);
-		$statement->execute();
+		$statement1->bindValue(':name', $s1name);
+		$statement1->bindValue(':dmg', $s1dmg);
+		$statement1->bindValue(':stat', $s1type);
+		$statement1->bindValue(':effect', $s1effect);
+		$statement1->bindValue(':range', $s1range);
+		$statement1->bindValue(':mp', $s1mp);
+		$statement1->execute();
 		echo "Checkpoint2";
 
-		$result = mysql_query("SELECT MAX(id) FROM skills");
-    	$row = mysql_fetch_row($result);
-    	$sk1 = $row[0];
+		$result1 = mysql_query("SELECT MAX(id) FROM skills");
+    	$row1 = mysql_fetch_row($result1);
+    	$sk1 = $row1[0];
 		echo "Checkpoint2";
 
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
