@@ -107,8 +107,9 @@
 		$statement->bindValue(':range', $s1range);
 		$statement->bindValue(':mp', $s1mp);
 		$statement->execute();
-
+		echo "Checkpoint2";
 		$sk1 = $statement->lastInsertId();
+		echo "Checkpoint2";
 
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
@@ -121,8 +122,9 @@
 		$statement->bindValue(':range', $s2range);
 		$statement->bindValue(':mp', $s2mp);
 		$statement->execute();
-
+		echo "Checkpoint3";
 		$sk2 = $statement->lastInsertId();
+		echo "Checkpoint3";
 
 		$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
 		$statement = $db->prepare($query);
@@ -133,8 +135,9 @@
 		$statement->bindValue(':skill1', $sk1);
 		$statement->bindValue(':skill2', $sk2);
 		$statement->execute();
-
+		echo "Checkpoint4";
 		$aaid = $statement->lastInsertId();
+		echo "Checkpoint4";
 
 		$query = 'INSERT INTO Units(name, class, aability, sability, weapon1, weapon2, armor, accessory, lvl, exp, hp, mp, atk, def, int, spr, move, crit, eva) 
 			VALUES(:name, :class, :aability, :sability, :weapon1, 
@@ -163,8 +166,9 @@
 	$statement->bindValue(':crit', $crit);
 	$statement->bindValue(':eva', $eva);
 	$statement->execute();
-
+	echo "Checkpoint5";
 	$id = $statement->lastInsertId();
+	echo "Checkpoint5";
 }
 catch (Exception $ex)
 {
