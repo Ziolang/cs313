@@ -52,17 +52,30 @@
 				$hp<br/>$mp<br/>$atk<br/>$def<br/>$int<br/>
 				$spr<br/>$move<br/>$crit<br/>$eva<br/>";
 
+				$w1id = 0;
+				$w2id = 0;
+				$arid = 0;
+				$acid = 0;
+				$said = 0;
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w1']) as $w1) {
-					echo 'Weapon1: '. '">' . $w1['name'] . " (" . $w1['effect'] . ")<br/>";
+					echo 'Weapon1: ' . $w1['name'] . " (" . $w1['effect'] . ")<br/>";
+					$w1id = $w1['id'];
 				}
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w2']) as $w2) {
 					echo 'Weapon2: ' . $w2['name'] . " (" . $w2['effect'] . ")<br/>";
+					$w2id = $w2['id'];
 				}
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ar']) as $ar) {
-					echo 'Armor: '. '">' . $ar['name'] . " (" . $ar['effect'] . ")<br/>";
+					echo 'Armor: ' . $ar['name'] . " (" . $ar['effect'] . ")<br/>";
+					$arid = $ar['id'];
 				}
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ac']) as $ac) {
-					echo 'Accessory: '. '">' . $ac['name'] . " (" . $ac['effect'] . ")<br/>";
+					echo 'Accessory: ' . $ac['name'] . " (" . $ac['effect'] . ")<br/>";
+					$acid = $ac['id'];
+				}
+				foreach ($db->query("SELECT * FROM Abilities WHERE id = " . $_POST['sa']) as $sa) {
+					echo 'S-Ability: ' . $sa['name'] . ": " . $sa['effect'] . "<br/>";
+					$said = $sa['id'];
 				}
 
 				$s1name = $_POST['s1name'];
@@ -119,4 +132,71 @@
 		</div>
 
 	</div>
+<?php 
+/*
+try
+{
+	// Add the Scripture
+	// We do this by preparing the query with placeholder values
+	$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
+	$statement = $db->prepare($query);
+	// Now we bind the values to the placeholders. This does some nice things
+	// including sanitizing the input with regard to sql commands.
+	$statement->bindValue(':name', $s1name);
+	$statement->bindValue(':dmg', $s1dmg);
+	$statement->bindValue(':stat', $s1stat);
+	$statement->bindValue(':effect', $s1effect);
+	$statement->bindValue(':range', $s1range);
+	$statement->bindValue(':mp', $s1mp);
+	$statement->execute();
+
+	$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
+	$statement = $db->prepare($query);
+	// Now we bind the values to the placeholders. This does some nice things
+	// including sanitizing the input with regard to sql commands.
+	$statement->bindValue(':name', $s2name);
+	$statement->bindValue(':dmg', $s2dmg);
+	$statement->bindValue(':stat', $s2stat);
+	$statement->bindValue(':effect', $s2effect);
+	$statement->bindValue(':range', $s2range);
+	$statement->bindValue(':mp', $s2mp);
+	$statement->execute();
+
+	$query = 'INSERT INTO Units(name, class, aability, sability, weapon1, weapon2, armor, accessory, lvl, exp, hp, mp, atk, def, int, spr, move, crit, eva) 
+		VALUES(:name, :class, :aability, :sability, :weapon1, 
+			:weapon2, :armor, :accessory, :lvl,
+			:exp, :hp, :mp, :atk, :def, :int, :spr, :move, :crit, :eva)';
+	$statement = $db->prepare($query);
+	// Now we bind the values to the placeholders. This does some nice things
+	// including sanitizing the input with regard to sql commands.
+	$statement->bindValue(':name', $name);
+	$statement->bindValue(':class', $class);
+	$statement->bindValue(':aability', $aa);
+	$statement->bindValue(':sability', $sa);
+	$statement->bindValue(':weapon1', $s1mp);
+	$statement->bindValue(':weapon2', $s1name);
+	$statement->bindValue(':armor', $s1dmg);
+	$statement->bindValue(':accessory', $s1stat);
+	$statement->bindValue(':lvl', $s1effect);
+	$statement->bindValue(':exp', $s1range);
+	$statement->bindValue(':hp', $s1mp);
+	$statement->bindValue(':mp', $s1mp);
+	$statement->bindValue(':atk', $s1name);
+	$statement->bindValue(':def', $s1dmg);
+	$statement->bindValue(':int', $s1stat);
+	$statement->bindValue(':spr', $s1effect);
+	$statement->bindValue(':move', $s1range);
+	$statement->bindValue(':crit', $s1mp);
+	$statement->bindValue(':eva', $s1mp);
+	$statement->execute();
+}
+catch (Exception $ex)
+{
+	echo "Error with DB. Details: $ex";
+	die();
+}
+// finally, redirect them to a new page to actually show the topics
+header("Location: showTopics.php");
+die();*/
+?>
 </body>
