@@ -89,6 +89,8 @@
 	$s2range = $_POST['s2range'];
 	$s2mp = $_POST['s2mp'];
 
+	echo "Checkpoint";
+
 	try	{
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
@@ -172,6 +174,4 @@ catch (Exception $ex)
 // finally, redirect them to a new page to actually show the topics
 header("Location: unit.php?id=" . $id);
 die();
-
-				
-				?>
+?>
