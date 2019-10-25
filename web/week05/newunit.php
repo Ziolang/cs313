@@ -54,6 +54,7 @@ $db = connect();?>
 					</select><br/><br/>
 				If unit has Dual Wield, A second weapon may be used.
 				Weapon2: <select name="w2">
+					<option value="0">No Dual Wield</option>
 					<?php 
 						foreach ($db->query("SELECT * FROM Equips WHERE type = 'Weapon'") as $w2) {
 							echo '<option value="' . $w2['id'] . '">' . $w2['name'] . " (" . $w2['effect'] . ")</option>";

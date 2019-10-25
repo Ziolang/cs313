@@ -61,10 +61,12 @@
 					echo 'Weapon1: ' . $w1['name'] . " (" . $w1['effect'] . ")<br/>";
 					$w1id = $w1['id'];
 				}
+				if ($_POST['w2'] != 0)
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w2']) as $w2) {
 					echo 'Weapon2: ' . $w2['name'] . " (" . $w2['effect'] . ")<br/>";
 					$w2id = $w2['id'];
 				}
+				else ( $w2id = NULL; )
 				foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ar']) as $ar) {
 					echo 'Armor: ' . $ar['name'] . " (" . $ar['effect'] . ")<br/>";
 					$arid = $ar['id'];
