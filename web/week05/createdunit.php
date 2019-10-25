@@ -49,10 +49,8 @@
 	}
 
 	$s1name = $_POST['s1name'];
-	$s1dmg = "";
-	if ($_POST['s1dmg'] !== 0) {
-		$s1dmg = $_POST['s1dmg'] . "% ". $_POST['s1type'] ." Damage. ";
-	}
+	$s1dmg = $_POST['s1dmg'];
+	$s1type = $_POST['s1type'];
 
 	$s1stat = $_POST['s1stat'];
 	$s1effect = "";
@@ -70,10 +68,8 @@
 	$s1mp = $_POST['s1mp'];
 
 	$s2name = $_POST['s2name'];
-	$s2dmg = "";
-	if ($_POST['s2dmg'] !== 0) {
-		$s2dmg = $_POST['s2dmg'] . "% ". $_POST['s2type'] ." Damage. ";
-	}
+	$s2dmg = $_POST['s2dmg'];
+	$s2type = $_POST['s2type'];
 
 	$s2stat = $_POST['s2stat'];
 	$s2effect = "";
@@ -96,13 +92,11 @@
 	// We do this by preparing the query with placeholder values
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
-		$s1damage = $_POST['s1dmg'];
-		$s2damage = $_POST['s1dmg'];
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
 		$statement->bindValue(':name', $s1name);
-		$statement->bindValue(':dmg', $s1damage);
-		$statement->bindValue(':stat', $s1stat);
+		$statement->bindValue(':dmg', $s1dmg);
+		$statement->bindValue(':stat', $s1type);
 		$statement->bindValue(':effect', $s1effect);
 		$statement->bindValue(':range', $s1range);
 		$statement->bindValue(':mp', $s1mp);
@@ -116,8 +110,8 @@
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
 		$statement->bindValue(':name', $s2name);
-		$statement->bindValue(':dmg', $s2damage);
-		$statement->bindValue(':stat', $s2stat);
+		$statement->bindValue(':dmg', $s2dmg);
+		$statement->bindValue(':stat', $s2type);
 		$statement->bindValue(':effect', $s2effect);
 		$statement->bindValue(':range', $s2range);
 		$statement->bindValue(':mp', $s2mp);

@@ -1,11 +1,11 @@
-CREATE TABLE Users ( 
+CREATE TABLE users ( 
    id SERIAL NOT NULL PRIMARY KEY, 
    username VARCHAR(100) NOT NULL UNIQUE, 
    password VARCHAR(100) NOT NULL, 
    display_name VARCHAR(100) NOT NULL 
 );
 
-CREATE TABLE Skills (
+CREATE TABLE skills (
 	id SERIAL NOT NULL PRIMARY KEY,
 	name varchar(100) NOT NULL,
 	dmg int,
@@ -16,7 +16,7 @@ CREATE TABLE Skills (
 	flavortext varchar(1000)
 );
 
-CREATE TABLE Abilities (
+CREATE TABLE abilities (
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(40) NOT NULL,
 	effect varchar(1000) NOT NULL, 
@@ -24,7 +24,7 @@ CREATE TABLE Abilities (
 	flavortext varchar(1000)
 );
 
-CREATE TABLE Equips ( 
+CREATE TABLE equips ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(100) NOT NULL, 
 	effect varchar(1000) NOT NULL, 
@@ -32,32 +32,32 @@ CREATE TABLE Equips (
 	flavortext varchar(1000)
 );
 
-CREATE TABLE SkillSet ( 
+CREATE TABLE skillset ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(100) NOT NULL, 
-	skill1 int REFERENCES Skills(id), 
-	skill2 int REFERENCES Skills(id), 
-	skill3 int REFERENCES Skills(id), 
-	skill4 int REFERENCES Skills(id), 
-	skill5 int REFERENCES Skills(id), 
-	skill6 int REFERENCES Skills(id), 
-	skill7 int REFERENCES Skills(id), 
-	skill8 int REFERENCES Skills(id), 
-	skill9 int REFERENCES Skills(id), 
-	skill10 int REFERENCES Skills(id)
+	skill1 int REFERENCES skills(id), 
+	skill2 int REFERENCES skills(id), 
+	skill3 int REFERENCES skills(id), 
+	skill4 int REFERENCES skills(id), 
+	skill5 int REFERENCES skills(id), 
+	skill6 int REFERENCES skills(id), 
+	skill7 int REFERENCES skills(id), 
+	skill8 int REFERENCES skills(id), 
+	skill9 int REFERENCES skills(id), 
+	skill10 int REFERENCES skills(id)
 );
 
-CREATE TABLE Units ( 
+CREATE TABLE units ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(100) NOT NULL, 
 	class varchar(100) NOT NULL, 
-	aability int NOT NULL REFERENCES SkillSet(id), 
-	sability int NOT NULL REFERENCES Abilities(id), 
-	rability int REFERENCES Abilities(id), 
-	weapon1 int NOT NULL REFERENCES Equips(id), 
-	weapon2 int REFERENCES Equips(id), 
-	armor int NOT NULL REFERENCES Equips(id), 
-	accessory int NOT NULL REFERENCES Equips(id), 
+	aability int NOT NULL REFERENCES skillset(id), 
+	sability int NOT NULL REFERENCES abilities(id), 
+	rability int REFERENCES abilities(id), 
+	weapon1 int NOT NULL REFERENCES equips(id), 
+	weapon2 int REFERENCES equips(id), 
+	armor int NOT NULL REFERENCES equips(id), 
+	accessory int NOT NULL REFERENCES equips(id), 
 	lvl int NOT NULL, 
 	exp int NOT NULL, 
 	hp int NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE Units (
 	flavortext varchar(4000)
 );
 
-CREATE TABLE Cells ( 
+CREATE TABLE cells ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(100) NOT NULL, 
 	content char NOT NULL, 
@@ -81,14 +81,14 @@ CREATE TABLE Cells (
 	effect varchar(1000)
 );
 
-CREATE TABLE CellPositions ( 
+CREATE TABLE cellpositions ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
 	position varchar(2) NOT NULL, 
-	cell_id int NOT NULL REFERENCES Cells(id), 
+	cell_id int NOT NULL REFERENCES cells(id), 
 	grid_name varchar(100) NOT NULL
 );
 
-INSERT INTO Skills 
+INSERT INTO skills 
 VALUES 
 	(DEFAULT, 'Fireball', 100, 'Int', 'Chance of Burn.', 3, 8, 'Hurls a flaming projectile at the target.'),
 	(DEFAULT, 'Ice Shard', 120, 'Int', NULL, 3, 8, 'Hurls a Freezing projectile at the target.'),
@@ -97,13 +97,13 @@ VALUES
 	(DEFAULT, 'Snipe', 100, 'Atk', 'Chance of Bleed.', 99, 10, 'Fires a magically imbued arrow capable of flying ridiculous distances.'),
 	(DEFAULT, 'First Aid', 100, 'Atk', 'Healing.', 0, 6, 'Quickly dresses minor wounds.');
 
-INSERT INTO Abilities 
+INSERT INTO abilities 
 VALUES 
 	(DEFAULT, 'Concentration', 'MP healing effects for the user are increased by 50%', 'S', NULL),
 	(DEFAULT, 'Dual Wield', 'Unit may carry an additional weapon.', 'S', NULL),
 	(DEFAULT, 'Steady Aim', 'Unit atk is increased by 10% and Basic Attack range is increased by 1.', 'S', NULL);
 
-INSERT INTO Equips (name, effect, type)
+INSERT INTO equips (name, effect, type)
 VALUES 
 	('Shortsword', 'Atk +1', 'Weapon'),
 	('Dagger', 'Atk +1', 'Weapon'),
@@ -116,13 +116,13 @@ VALUES
 	('Pendant', 'Int +1', 'Accessory'),
 	('Bracer', 'Crit +3', 'Accessory');
 
-INSERT INTO SkillSet (name, skill1, skill2)
+INSERT INTO skillset (name, skill1, skill2)
 VALUES 
 	('Black Magic', 1, 2),
 	('Swordsmanship', 3, 4),
 	('Archery', 5, 6);
 
-INSERT INTO Units
+INSERT INTO units
 VALUES 
 	(DEFAULT, 'Magic Dude', 'Black Mage', 1, 1, NULL, 3, NULL, 6, 9, 1, 0, 15, 25, 2, 2, 4, 3, 2, 2, 2, NULL),
 	(DEFAULT, 'Sword Guy', 'Swordsman', 2, 2, NULL, 1, 2, 5, 8, 1, 0, 25, 15, 4, 3, 2, 2, 3, 3, 2, NULL),
