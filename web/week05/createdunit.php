@@ -102,7 +102,10 @@
 		$statement->bindValue(':mp', $s1mp);
 		$statement->execute();
 		echo "Checkpoint2";
-		$sk1 = $statement->lastInsertId('skills_id_seq');
+
+		$result = mysql_query("SELECT MAX(id) FROM skills");
+    	$row = mysql_fetch_row($result);
+    	$sk1 = $row[0];
 		echo "Checkpoint2";
 
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
@@ -117,7 +120,9 @@
 		$statement->bindValue(':mp', $s2mp);
 		$statement->execute();
 		echo "Checkpoint3";
-		$sk2 = $statement->lastInsertId('skills_id_seq');
+		$result = mysql_query("SELECT MAX(id) FROM skills");
+    	$row = mysql_fetch_row($result);
+    	$sk2 = $row[0];
 		echo "Checkpoint3";
 
 		$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
@@ -130,7 +135,9 @@
 		$statement->bindValue(':skill2', $sk2);
 		$statement->execute();
 		echo "Checkpoint4";
-		$aaid = $statement->lastInsertId('skillSet_id_seq');
+		$result = mysql_query("SELECT MAX(id) FROM skills");
+    	$row = mysql_fetch_row($result);
+    	$aaid = $row[0];
 		echo "Checkpoint4";
 
 		$query = 'INSERT INTO Units(name, class, aability, sability, weapon1, weapon2, armor, accessory, lvl, exp, hp, mp, atk, def, int, spr, move, crit, eva) 
@@ -161,7 +168,9 @@
 	$statement->bindValue(':eva', $eva);
 	$statement->execute();
 	echo "Checkpoint5";
-	$id = $statement->lastInsertId('units_id_seq');
+	$result = mysql_query("SELECT MAX(id) FROM skills");
+    $row = mysql_fetch_row($result);
+    $id = $row[0];
 	echo "Checkpoint5";
 }
 catch (Exception $ex)
