@@ -85,8 +85,6 @@
 	$s2range = $_POST['s2range'];
 	$s2mp = $_POST['s2mp'];
 
-	echo "Checkpoint";
-
 	try	{
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
@@ -101,10 +99,8 @@
 		$statement->bindValue(':range', $s1range);
 		$statement->bindValue(':mp', $s1mp);
 		$statement->execute();
-		echo "Checkpoint2";
 
 		$sk1 = $db->lastInsertId();
-		echo $sk1;
 
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
@@ -118,9 +114,7 @@
 		$statement->bindValue(':mp', $s2mp);
 		$statement->execute();
 
-		echo "Checkpoint3";
 		$sk2 = $db->lastInsertId();
-		echo $sk2;
 
 		$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
 		$statement = $db->prepare($query);
@@ -132,7 +126,7 @@
 		$statement->bindValue(':skill2', $sk2);
 		$statement->execute();
 
-		echo "Checkpoint4";
+		$aaid = $db->lastInsertId();
 
 		$query = 'INSERT INTO Units(name, class, aability, sability, weapon1, weapon2, armor, accessory, lvl, exp, hp, mp, atk, def, int, spr, move, crit, eva) 
 			VALUES(:name, :class, :aability, :sability, :weapon1, 
