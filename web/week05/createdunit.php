@@ -105,11 +105,6 @@
 
 		$result1 = mysql_query("SELECT MAX(id) FROM skills");
 		echo $result1;
-    	$row1 = mysql_fetch_row($result1);
-    	echo $row1;
-    	$sk1 = $row1[0];
-		echo "Checkpoint2";
-
 		/*$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
 	// Now we bind the values to the placeholders. This does some nice things
