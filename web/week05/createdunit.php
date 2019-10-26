@@ -90,18 +90,21 @@
 	try	{
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-		$query1 = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
-		$statement1 = $db->prepare($query1);
+		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
+		$statement = $db->prepare($query);
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
-		$statement1->bindValue(':name', $s1name);
-		$statement1->bindValue(':dmg', $s1dmg);
-		$statement1->bindValue(':stat', $s1type);
-		$statement1->bindValue(':effect', $s1effect);
-		$statement1->bindValue(':range', $s1range);
-		$statement1->bindValue(':mp', $s1mp);
-		$statement1->execute();
+		$statement->bindValue(':name', $s1name);
+		$statement->bindValue(':dmg', $s1dmg);
+		$statement->bindValue(':stat', $s1type);
+		$statement->bindValue(':effect', $s1effect);
+		$statement->bindValue(':range', $s1range);
+		$statement->bindValue(':mp', $s1mp);
+		$statement->execute();
 		echo "Checkpoint2";
+
+		$sk1 = $db->lastInsertId();
+		echo $sk1;
 
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
@@ -116,6 +119,8 @@
 		$statement->execute();
 
 		echo "Checkpoint3";
+		$sk2 = $db->lastInsertId();
+		echo $sk2;
 
 		$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
 		$statement = $db->prepare($query);
@@ -157,7 +162,6 @@
 		$statement->bindValue(':eva', $eva);
 		$statement->execute();
 
-    $id = $row[0];
 	echo "Checkpoint5";
 }
 catch (Exception $ex)
