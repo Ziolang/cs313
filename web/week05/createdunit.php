@@ -32,11 +32,14 @@
 	foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w1']) as $w1) {
 		$w1id = $w1['id'];
 	}
-	if ($_POST['w2'] !== 0)
-		foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w2']) as $w2) {
-		$w2id = $w2['id'];
+	if ($_POST['w2'] == 0) { 
+		$w2id = NULL; 
 	}
-	else { $w2id = NULL; }
+	else {
+		foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['w2']) as $w2) {
+			$w2id = $w2['id'];
+		}
+	}
 
 	foreach ($db->query("SELECT * FROM Equips WHERE id = " . $_POST['ar']) as $ar) {
 					$arid = $ar['id'];
