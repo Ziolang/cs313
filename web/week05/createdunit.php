@@ -57,13 +57,13 @@
 
 	$s1stat = $_POST['s1stat'];
 	$s1effect = "";
-	if ($_POST['s1status'] != 0) {
+	if ($_POST['s1status'] != "0") {
 		$s1effect .= "Chance of " . $_POST['s1status'] . ". ";
 	}
-	if ($_POST['s1buff'] != 0) {
+	if ($_POST['s1buff'] != "0") {
 		$s1effect .= $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . "%. ";
 	}
-	if ($_POST['s1other'] != 0) {
+	if ($_POST['s1other'] != "0") {
 		$s1effect .= $_POST['s1other'] . ".";
 	}
 				
@@ -76,13 +76,13 @@
 
 	$s2stat = $_POST['s2stat'];
 	$s2effect = "";
-	if ($_POST['s2status'] != 0) {
+	if ($_POST['s2status'] != "0") {
 		$s2effect .= "Chance of " . $_POST['s2status'] . ". ";
 	}
-	if ($_POST['s2buff'] != 0) {
+	if ($_POST['s2buff'] != "0") {
 		$s2effect .= $_POST['s2buff'] . " " . $_POST['s2buffstat'] . " by " . $_POST['s2buffamt'] . "%. ";
 	}
-	if ($_POST['s2other'] != 0) {
+	if ($_POST['s2other'] != "0") {
 		$s2effect .= $_POST['s2other'] . ".";
 	}
 	$s2range = $_POST['s2range'];

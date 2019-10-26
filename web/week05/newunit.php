@@ -23,15 +23,15 @@ $db = connect();?>
 			<div class="search col-sm-12">
 				<form action="createdunit.php" method="post">
 					<h1>Create new level 1 unit.</h1>
-					Name: <input type="text" name="name"><br/><br/>
-					Class: <input type="text" name="class"><br/><br/>
+					Name: <input type="text" name="name" required><br/><br/>
+					Class: <input type="text" name="class" required><br/><br/>
 					Stat Style: <select name="stats">
 						<option value="fa">Fast Attacker</option>
 						<option value="ra">Ranged Attacker</option>
 						<option value="sm">Support Magic</option> 
 						<option value="om">Offensive Magic</option>
 					</select><br/><br/>
-					Activated-Ability Name: <input type="text" name="aa"> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
+					Activated-Ability Name: <input type="text" name="aa" required> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
 					Support-Ability: <select name="sa">
 					<?php 
 						foreach ($db->query("SELECT * FROM Abilities") as $sa) {
@@ -80,7 +80,7 @@ $db = connect();?>
 		<div class="row">
 			<div class="search col-sm-12">
 					<h2>First Starting Skill</h2>
-					Name: <input type="text" name="s1name" onchange="calculateMP()"><br/><br/>
+					Name: <input type="text" name="s1name" onchange="calculateMP()" required><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
 					Damage type: <select name="s1type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>s
@@ -120,14 +120,14 @@ $db = connect();?>
 						<option value="Line-shape area">Line-shape area.</option>
 						<option value="Cone-shape area">Cone-shape area.</option>
 					</select><br/><br/>
-					Range: <input type="number" name="s1range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
+					Range: <input type="number" name="s1range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()" required> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
 					MP: <span id="s1mpview">0</span>. (MP is auto-defined as you go.) <input name="s1mp" style="visibility:hidden;">
 			</div>
 		</div>
 		<div class="row">
 			<div class="search col-sm-12">			
 					<h2>Second Starting Skill</h2>
-					Name: <input type="text" name="s2name" onchange="calculateMP()"><br/><br/>
+					Name: <input type="text" name="s2name" onchange="calculateMP()" required><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s2dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
 					Damage type: <select name="s2type" onchange="calculateMP()">
 						<option value="atk">Attack stat damage</option>s
@@ -167,7 +167,7 @@ $db = connect();?>
 						<option value="Line-shape area">Line-shape area.</option>
 						<option value="Cone-shape area">Cone-shape area.</option>
 					</select><br/><br/>
-					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()"> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
+					Range: <input type="number" name="s2range" min="0" max="99" step="1" value="0" size="2" onchange="calculateMP()" required> (Range of 0 means it can only target the user; any range higher than 9 is superfluous and will be treated as infinite range) <br/><br/>
 					MP: <span id="s2mpview">0</span>. (MP is auto-defined as you go.) <input name="s2mp" style="visibility:hidden;">
 
 					<input type="submit">
