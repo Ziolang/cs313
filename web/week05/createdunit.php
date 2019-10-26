@@ -103,9 +103,7 @@
 		$statement1->execute();
 		echo "Checkpoint2";
 
-		$result1 = mysql_query("SELECT MAX(id) FROM skills");
-		echo $result1;
-		/*$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
+		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
@@ -116,10 +114,7 @@
 		$statement->bindValue(':range', $s2range);
 		$statement->bindValue(':mp', $s2mp);
 		$statement->execute();
-		echo "Checkpoint3";
-		$result = mysql_query("SELECT MAX(id) FROM skills");
-    	$row = mysql_fetch_row($result);
-    	$sk2 = $row[0];
+
 		echo "Checkpoint3";
 
 		$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
@@ -131,10 +126,7 @@
 		$statement->bindValue(':skill1', $sk1);
 		$statement->bindValue(':skill2', $sk2);
 		$statement->execute();
-		echo "Checkpoint4";
-		$result = mysql_query("SELECT MAX(id) FROM skills");
-    	$row = mysql_fetch_row($result);
-    	$aaid = $row[0];
+
 		echo "Checkpoint4";
 
 		$query = 'INSERT INTO Units(name, class, aability, sability, weapon1, weapon2, armor, accessory, lvl, exp, hp, mp, atk, def, int, spr, move, crit, eva) 
@@ -145,30 +137,28 @@
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
 		$statement->bindValue(':name', $name);
-	$statement->bindValue(':class', $class);
-	$statement->bindValue(':aability', $aaid);
-	$statement->bindValue(':sability', $said);
-	$statement->bindValue(':weapon1', $w1id);
-	$statement->bindValue(':weapon2', $w2id);
-	$statement->bindValue(':armor', $arid);
-	$statement->bindValue(':accessory', $acid);
-	$statement->bindValue(':lvl', $lvl);
-	$statement->bindValue(':exp', $exp);
-	$statement->bindValue(':hp', $hp);
-	$statement->bindValue(':mp', $mp);
-	$statement->bindValue(':atk', $atk);
-	$statement->bindValue(':def', $def);
-	$statement->bindValue(':int', $int);
-	$statement->bindValue(':spr', $spr);
-	$statement->bindValue(':move', $move);
-	$statement->bindValue(':crit', $crit);
-	$statement->bindValue(':eva', $eva);
-	$statement->execute();
-	echo "Checkpoint5";
-	$result = mysql_query("SELECT MAX(id) FROM skills");
-    $row = mysql_fetch_row($result);
+		$statement->bindValue(':class', $class);
+		$statement->bindValue(':aability', $aaid);
+		$statement->bindValue(':sability', $said);
+		$statement->bindValue(':weapon1', $w1id);
+		$statement->bindValue(':weapon2', $w2id);
+		$statement->bindValue(':armor', $arid);
+		$statement->bindValue(':accessory', $acid);
+		$statement->bindValue(':lvl', $lvl);
+		$statement->bindValue(':exp', $exp);
+		$statement->bindValue(':hp', $hp);
+		$statement->bindValue(':mp', $mp);
+		$statement->bindValue(':atk', $atk);
+		$statement->bindValue(':def', $def);
+		$statement->bindValue(':int', $int);
+		$statement->bindValue(':spr', $spr);
+		$statement->bindValue(':move', $move);
+		$statement->bindValue(':crit', $crit);
+		$statement->bindValue(':eva', $eva);
+		$statement->execute();
+
     $id = $row[0];
-	echo "Checkpoint5";*/
+	echo "Checkpoint5";
 }
 catch (Exception $ex)
 {
