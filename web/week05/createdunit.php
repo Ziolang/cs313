@@ -104,7 +104,9 @@
 		echo "Checkpoint2";
 
 		$result1 = mysql_query("SELECT MAX(id) FROM skills");
+		echo $result1;
     	$row1 = mysql_fetch_row($result1);
+    	echo $row1;
     	$sk1 = $row1[0];
 		echo "Checkpoint2";
 
