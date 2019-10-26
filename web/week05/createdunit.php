@@ -124,7 +124,7 @@
 
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
-		$statement->bindValue(':name', $class);
+		$statement->bindValue(':name', $aa);
 		$statement->bindValue(':skill1', $sk1);
 		$statement->bindValue(':skill2', $sk2);
 		$statement->execute();
