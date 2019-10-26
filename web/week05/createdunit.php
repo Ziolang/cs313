@@ -159,6 +159,8 @@
 		$statement->bindValue(':eva', $eva);
 		$statement->execute();
 
+		$unitid = $db->lastInsertId();
+
 	echo "Checkpoint5";
 }
 catch (Exception $ex)
@@ -167,6 +169,6 @@ catch (Exception $ex)
 	die();
 }
 // finally, redirect them to a new page to actually show the topics
-header("Location: unit.php?id=" . $id);
+header("Location: unit.php?id=" . $unitid);
 die();
 ?>
