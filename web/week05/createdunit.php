@@ -11,15 +11,22 @@
 	$hp = 25; $mp = 15; $atk = 4; $def = 3; $int = 2; 
 	$spr = 2; $move = 3; $crit = 2; $eva = 2;
 
-	if ($_POST['name'] == "ra"){
-		$hp = 20; $mp = 20; $atk = 4; $def = 2; $int = 2; 
-		$spr = 3; $move = 2; $crit = 2; $eva = 3;
+	if ($_POST['stats'] == "ra"){
+		$hp = 20; 
+		$mp = 20; 
+		$atk = 4; 
+		$def = 2; 
+		$int = 2; 
+		$spr = 3; 
+		$move = 2; 
+		$crit = 2; 
+		$eva = 3;
 	}
-	if ($_POST['name'] == "sm"){
+	if ($_POST['stats'] == "sm"){
 		$hp = 20; $mp = 20; $atk = 2; $def = 3; $int = 4; 
 		$spr = 2; $move = 2; $crit = 1; $eva = 4;
 	}
-	if ($_POST['name'] == "om"){
+	if ($_POST['stats'] == "om"){
 		$hp = 15; $mp = 25; $atk = 2; $def = 2; $int = 4; 
 		$spr = 3; $move = 2; $crit = 4; $eva = 1;
 	}

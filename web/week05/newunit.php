@@ -24,7 +24,7 @@ $db = connect();?>
 				<form action="createdunit.php" method="post">
 					<h1>Create new level 1 unit.</h1>
 					Unit Name: <input type="text" name="name" required><br/><br/>
-					Unit Class: <input type="text" name="class" required><br/><br/> Ex: Archer, Thief, Shadow Knight, etc.
+					Unit Class: <input type="text" name="class" required> Ex: Archer, Thief, Shadow Knight, etc.<br/><br/>
 					Base Stat Type: <select name="stats">
 						<option value="fa">Fast Attacker</option>
 						<option value="ra">Support Attacker</option>

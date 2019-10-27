@@ -5,6 +5,12 @@ CREATE TABLE users (
    display_name VARCHAR(100) NOT NULL 
 );
 
+DROP TABLE units;
+DROP TABLE skillset;
+DROP TABLE skills;
+DROP TABLE equips;
+DROP TABLE abilities;
+
 CREATE TABLE skills (
 	id SERIAL NOT NULL PRIMARY KEY,
 	name varchar(100) NOT NULL,
@@ -118,7 +124,10 @@ VALUES
 	('Leather Padding', 'Def +1', 'Armor'),
 	('Gauntlet', 'Atk +1', 'Accessory'),
 	('Pendant', 'Int +1', 'Accessory'),
-	('Bracer', 'Crit +3', 'Accessory');
+	('Bracer', 'Crit +3', 'Accessory'),
+	('Silver Chain', 'MP +5', 'Accessory'),
+	('Solid Helm', 'HP +5', 'Accessory'),
+	('Quick Boots', 'Eva +3', 'Accessory');
 
 INSERT INTO skillset (name, skill1, skill2)
 VALUES 
@@ -136,8 +145,3 @@ VALUES
 
 
 
-DROP TABLE units;
-DROP TABLE skillset;
-DROP TABLE skills;
-DROP TABLE equips;
-DROP TABLE abilities;
