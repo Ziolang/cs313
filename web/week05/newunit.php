@@ -26,10 +26,10 @@ $db = connect();?>
 					Unit Name: <input type="text" name="name" required><br/><br/>
 					Unit Class: <input type="text" name="class" required> Ex: Archer, Thief, Shadow Knight, etc.<br/><br/>
 					Base Stat Type: <select name="stats">
-						<option value="fa">Fast Attacker</option>
-						<option value="ra">Support Attacker</option>
-						<option value="sm">Support Magic</option> 
-						<option value="om">Offensive Magic</option>
+						<option value="fa">Frontline Atk (HP: 25 MP: 15 Atk: 4 Def: 3 Int: 2 Spr: 2)</option>
+						<option value="ra">Support Atk (HP: 20 MP: 20 Atk: 4 Def: 2 Int: 2 Spr: 3)</option>
+						<option value="sm">Support Magic (HP: 20 MP: 20 Atk: 2 Def: 3 Int: 4 Spr: 2)</option> 
+						<option value="om">Aggro Magic (HP: 15 MP: 25 Atk: 2 Def: 2 Int: 4 Spr: 3)</option>
 					</select><br/><br/>
 					Activated-Ability Name: <input type="text" name="aa" required> Ex: an Archer might have an A-Ability named "Archery"<br/><br/>
 					Support-Ability: <select name="sa">
