@@ -103,9 +103,9 @@
 							<span id=\"caption\">3</span> Stat Points Remaining
 						<table>
   							<tr>
-    							<th>Current</th>
-    							<th>Stats</th>
-    							<th>Use Points</th>
+    							<th>Current---</th>
+    							<th>Stats---</th>
+    							<th>Use Points---</th>
     							<th>Points Added</th>
     						</tr>
     						<tr>
@@ -144,9 +144,12 @@
     							<td><button type=\"button\" onclick=\"upStat('spr')\">+</button> +<span id=\"spr\">0</span> <button type=\"button\" onclick=\"downStat('spr')\">-</button></td>
     							<td><input id=\"spr2\" name=\"spr\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
-						</table>"
-					?>	
+						</table>";
 
+						
+					?>	
+					<input type="submit">
+				</form>
 			</div>
 		</div>
 
