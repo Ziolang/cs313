@@ -23,11 +23,11 @@ $db = connect();?>
 			<div class="search col-sm-12">
 				<form action="createdunit.php" method="post">
 					<h1>Create new level 1 unit.</h1>
-					Name: <input type="text" name="name" required><br/><br/>
-					Class: <input type="text" name="class" required><br/><br/>
-					Stat Style: <select name="stats">
+					Unit Name: <input type="text" name="name" required><br/><br/>
+					Unit Class: <input type="text" name="class" required><br/><br/> Ex: Archer, Thief, Shadow Knight, etc.
+					Base Stat Type: <select name="stats">
 						<option value="fa">Fast Attacker</option>
-						<option value="ra">Ranged Attacker</option>
+						<option value="ra">Support Attacker</option>
 						<option value="sm">Support Magic</option> 
 						<option value="om">Offensive Magic</option>
 					</select><br/><br/>
@@ -109,7 +109,7 @@ $db = connect();?>
 						<option value="Int and Spr">Int and Spr</option>
 						<option value="Def and Spr">Def and Spr</option>
 					</select>
-					by <input type="number" name="s1buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">%.
+					by <input type="number" name="s1buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">% for 3 turns.
 					<br/><br/>
 					Other Effects: <select name="s1other" onchange="calculateMP()">
 						<option value="0" selected>None</option>
@@ -156,7 +156,7 @@ $db = connect();?>
 						<option value="Int and Spr">Int and Spr</option>
 						<option value="Def and Spr">Def and Spr</option>
 					</select>
-					by <input type="number" name="s2buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">%.
+					by <input type="number" name="s2buffamt" min="0" max="100" step="10" value="0" size="3" onchange="calculateMP()">% for 3 turns.
 					<br/><br/>
 					Other Effects: <select name="s2other" onchange="calculateMP()">
 						<option value="0" selected>None</option>

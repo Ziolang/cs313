@@ -101,7 +101,11 @@ INSERT INTO abilities
 VALUES 
 	(DEFAULT, 'Concentration', 'MP healing effects for the user are increased by 50%', 'S', NULL),
 	(DEFAULT, 'Dual Wield', 'Unit may carry an additional weapon.', 'S', NULL),
-	(DEFAULT, 'Steady Aim', 'Unit atk is increased by 10% and Basic Attack range is increased by 1.', 'S', NULL);
+	(DEFAULT, 'Steady Aim', 'Unit atk is increased by 10% and Basic Attack range is increased by 1.', 'S', NULL),
+	(DEFAULT, 'Might', 'Atk and Def increased by 10%.', 'S', NULL),
+	(DEFAULT, 'Prowess', 'Int and Spr increased by 10%.', 'S', NULL),
+	(DEFAULT, 'Efficient', 'Skills cost 15% less MP.', 'S', NULL),
+	(DEFAULT, 'Scorch', 'Basic attacks have Chance of Burn.', 'S', NULL);
 
 INSERT INTO equips (name, effect, type)
 VALUES 
@@ -127,3 +131,13 @@ VALUES
 	(DEFAULT, 'Magic Dude', 'Black Mage', 1, 1, NULL, 3, NULL, 6, 9, 1, 0, 15, 25, 2, 2, 4, 3, 2, 2, 2, NULL),
 	(DEFAULT, 'Sword Guy', 'Swordsman', 2, 2, NULL, 1, 2, 5, 8, 1, 0, 25, 15, 4, 3, 2, 2, 3, 3, 2, NULL),
 	(DEFAULT, 'Arrow Lady', 'Ranger', 3, 3, NULL, 4, NULL, 7, 10, 1, 0, 20, 20, 4, 2, 2, 3, 2, 4, 3, NULL);
+
+
+
+
+
+DROP TABLE units;
+DROP TABLE skillset;
+DROP TABLE skills;
+DROP TABLE equips;
+DROP TABLE abilities;

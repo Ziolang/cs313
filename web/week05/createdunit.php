@@ -61,7 +61,7 @@
 		$s1effect .= "Chance of " . $_POST['s1status'] . ". ";
 	}
 	if ($_POST['s1buff'] != "0") {
-		$s1effect .= $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . "%. ";
+		$s1effect .= $_POST['s1buff'] . " " . $_POST['s1buffstat'] . " by " . $_POST['s1buffamt'] . "% for 3 turns. ";
 	}
 	if ($_POST['s1other'] != "0") {
 		$s1effect .= $_POST['s1other'] . ".";
@@ -80,7 +80,7 @@
 		$s2effect .= "Chance of " . $_POST['s2status'] . ". ";
 	}
 	if ($_POST['s2buff'] != "0") {
-		$s2effect .= $_POST['s2buff'] . " " . $_POST['s2buffstat'] . " by " . $_POST['s2buffamt'] . "%. ";
+		$s2effect .= $_POST['s2buff'] . " " . $_POST['s2buffstat'] . " by " . $_POST['s2buffamt'] . "% for 3 turns. ";
 	}
 	if ($_POST['s2other'] != "0") {
 		$s2effect .= $_POST['s2other'] . ".";
