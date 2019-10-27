@@ -1,6 +1,6 @@
 function upStat(stat) {
-	var statpts = parseint(document.getElementById("caption").innerHTML, 10);
-	var value = parseint(document.getElementById(stat).innerHTML, 10);
+	var statpts = parseInt(document.getElementById("caption").innerHTML, 10);
+	var value = parseInt(document.getElementById(stat).innerHTML, 10);
 
 	if (statpts > 0) {
 		value++;
@@ -13,8 +13,8 @@ function upStat(stat) {
 }
 
 function downStat(stat) {
-	var statpts = parseint(document.getElementById("caption").innerHTML, 10);
-	var value = parseint(document.getElementById(stat).innerHTML, 10);
+	var statpts = parseInt(document.getElementById("caption").innerHTML, 10);
+	var value = parseInt(document.getElementById(stat).innerHTML, 10);
 
 	if (statpts < 3) {
 		value--;
