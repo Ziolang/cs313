@@ -87,7 +87,7 @@
 				}
 				?>
 			</div>
-			<div class="col-sm-6">
+			<div class="search col-sm-6">
 				<form>
 					<h1>Level Up</h1>
 					<?php 
@@ -110,38 +110,38 @@
     						<tr>
     							<td>HP</td>
     							<td>" . $unit['hp'] . "</td>
-    							<td><button onclick=\"upStat(\"hp\")\"><button onclick=\"downStat(\"hp\")\"></td>
-    							<td>+<span id=\"hp\">0</span><input id=\"hp2\" name=\"hp\" style=\"visibility:hidden;\" value=\"0\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"hp\")\">+</button>+<span id=\"hp\">0</span><button type=\"button\" onclick=\"downStat(\"hp\")\">-</button></td>
+    							<td><input id=\"hp2\" name=\"hp\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>MP</td>
     							<td>" . $unit['mp'] . "</td>
-    							<td><button onclick=\"upStat(\"mp\")\"><button onclick=\"downStat(\"mp\")\"></td>
-    							<td>+<span id=\"mp\">0</span><input id=\"mp2\" name=\"mp\" style=\"visibility:hidden;\" value=\"0\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"mp\")\">+</button>+<span id=\"mp\">0</span><button type=\"button\" onclick=\"downStat(\"mp\")\"></td>
+    							<td><input id=\"mp2\" name=\"mp\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Atk</td>
     							<td>" . $unit['atk'] . "</td>
-    							<td><button onclick=\"upStat(\"atk\")\"><button onclick=\"downStat(\"atk\")\"></td>
-    							<td>+<span id=\"atk\">0</span><input id=\"atk2\" name=\"atk\" style=\"visibility:hidden;\" value=\"0\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"atk\")\">+</button>+<span id=\"atk\">0</span><button type=\"button\" onclick=\"downStat(\"atk\")\"></td>
+    							<td><input id=\"atk2\" name=\"atk\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Def</td>
     							<td>" . $unit['def'] . "</td>
-    							<td><button onclick=\"upStat(\"def\")\"><button onclick=\"downStat(\"def\")\"></td>
-    							<td>+<span id=\"def\">0</span><input id=\"def2\" name=\"def\" style=\"visibility:hidden;\" value=\"0\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"def\")\">+</button>+<span id=\"def\">0</span><button type=\"button\" onclick=\"downStat(\"def\")\"></td>
+    							<td><input id=\"def2\" name=\"def\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Int</td>
     							<td>" . $unit['int'] . "</td>
-    							<td><button onclick=\"upStat(\"int\")\"><button onclick=\"downStat(\"int\")\"></td>
-    							<td>+<span id=\"int\">0</span><input id=\"int2\" name=\"int\" style=\"visibility:hidden;\" value=\"0\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"int\")\">+</button>+<span id=\"int\">0</span><button type=\"button\" onclick=\"downStat(\"int\")\"></td>
+    							<td><input id=\"int2\" name=\"int\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Spr</td>
     							<td>" . $unit['spr'] . "</td>
-    							<td><button onclick=\"upStat(\"spr\")\"><button onclick=\"downStat(\"spr\")\"></td>
-    							<td>+<span id=\"spr\">0</span><input id=\"spr2\" name=\"spr\" style=\"visibility:hidden;\" value=\"0\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"spr\")\">+</button>+<span id=\"spr\">0</span><button type=\"button\" onclick=\"downStat(\"spr\")\"></td>
+    							<td><input id=\"spr2\" name=\"spr\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
 						</table>"
 					?>	
