@@ -96,14 +96,15 @@
 					foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $x) {
 						$unit = $x;
 					}
+					$newlvl += $unit['lvl'];
 					echo "<h2>New Level: $newlvl</h2><br/> <h3 id=\"statpts\">3 Stat Points gained</h3><br/>";
 
 					echo "
 						<table>
-							<caption><span id=\"caption\">3</span> Stat Points Remaining</caption>
+							<caption>3 Stat Points Remaining</caption>
   							<tr>
-    							<th>Stat</th>
     							<th>Current</th>
+    							<th>Stats</th>
     							<th>Use Points</th>
     							<th>Points Added</th>
     						</tr>
