@@ -4,6 +4,8 @@ function upStat(stat) {
 
 	if (statpts > 0) {
 		value++;
+		if (stat == "hp" || stat == "mp")
+			value = value * 5;
 		statpts--;
 	}
 
