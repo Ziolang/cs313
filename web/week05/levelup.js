@@ -3,9 +3,10 @@ function upStat(stat) {
 	var value = parseInt(document.getElementById(stat).innerHTML, 10);
 
 	if (statpts > 0) {
-		value++;
 		if (stat == "hp" || stat == "mp")
-			value = value * 5;
+			value = value + 5;
+		else
+			value++;
 		statpts--;
 	}
 
@@ -19,7 +20,10 @@ function downStat(stat) {
 	var value = parseInt(document.getElementById(stat).innerHTML, 10);
 
 	if (statpts < 3) {
-		value--;
+		if (stat == "hp" || stat == "mp")
+			value = value - 5;
+		else
+			value--;
 		statpts++;
 	}
 
