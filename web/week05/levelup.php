@@ -100,8 +100,8 @@
 					echo "<h2>New Level: $newlvl</h2><br/> <h3 id=\"statpts\">3 Stat Points gained</h3><br/>";
 
 					echo "
+							<span id=\"caption\">3</span> Stat Points Remaining
 						<table>
-							<caption>3 Stat Points Remaining</caption>
   							<tr>
     							<th>Current</th>
     							<th>Stats</th>
