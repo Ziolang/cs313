@@ -116,31 +116,31 @@
     						<tr>
     							<td>MP</td>
     							<td>" . $unit['mp'] . "</td>
-    							<td><button type=\"button\" onclick=\"upStat(\"mp\")\">+</button>+<span id=\"mp\">0</span><button type=\"button\" onclick=\"downStat(\"mp\")\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"mp\")\">+</button>+<span id=\"mp\">0</span><button type=\"button\" onclick=\"downStat(\"mp\")\">-</button></td>
     							<td><input id=\"mp2\" name=\"mp\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Atk</td>
     							<td>" . $unit['atk'] . "</td>
-    							<td><button type=\"button\" onclick=\"upStat(\"atk\")\">+</button>+<span id=\"atk\">0</span><button type=\"button\" onclick=\"downStat(\"atk\")\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"atk\")\">+</button>+<span id=\"atk\">0</span><button type=\"button\" onclick=\"downStat(\"atk\")\">-</button></td>
     							<td><input id=\"atk2\" name=\"atk\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Def</td>
     							<td>" . $unit['def'] . "</td>
-    							<td><button type=\"button\" onclick=\"upStat(\"def\")\">+</button>+<span id=\"def\">0</span><button type=\"button\" onclick=\"downStat(\"def\")\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"def\")\">+</button>+<span id=\"def\">0</span><button type=\"button\" onclick=\"downStat(\"def\")\">-</button></td>
     							<td><input id=\"def2\" name=\"def\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Int</td>
     							<td>" . $unit['int'] . "</td>
-    							<td><button type=\"button\" onclick=\"upStat(\"int\")\">+</button>+<span id=\"int\">0</span><button type=\"button\" onclick=\"downStat(\"int\")\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"int\")\">+</button>+<span id=\"int\">0</span><button type=\"button\" onclick=\"downStat(\"int\")\">-</button></td>
     							<td><input id=\"int2\" name=\"int\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
     						<tr>
     							<td>Spr</td>
     							<td>" . $unit['spr'] . "</td>
-    							<td><button type=\"button\" onclick=\"upStat(\"spr\")\">+</button>+<span id=\"spr\">0</span><button type=\"button\" onclick=\"downStat(\"spr\")\"></td>
+    							<td><button type=\"button\" onclick=\"upStat(\"spr\")\">+</button>+<span id=\"spr\">0</span><button type=\"button\" onclick=\"downStat(\"spr\")\">-</button></td>
     							<td><input id=\"spr2\" name=\"spr\" style=\"visibility:hidden;\" value=\"0\"></td>
     						</tr>
 						</table>"
