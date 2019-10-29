@@ -36,7 +36,11 @@ function checkPassword() {
 			isSame = false;
 		}
 
-		if (isNaN(item1.charAt(i))) { charCount++; } else { numCount++; }
+		if (isNaN(item1.charAt(i))) { 
+			charCount++; 
+		} else { 
+			numCount++; 
+		}
 	}
 
 	if (!isSame) {
@@ -47,7 +51,7 @@ function checkPassword() {
 		document.getElementById('error').innerHTML = "";
 	}
 
-	if (numCount < 0) {
+	if (numCount == 0) {
 		document.getElementById('error2').innerHTML = "Password needs to be at least 7 characters long and contain a number.<br>";
 	}
 
