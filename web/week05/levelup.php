@@ -88,7 +88,7 @@
 				?>
 			</div>
 			<div class="search col-sm-6">
-				<form>
+				<form onsubmit="return checklvlup()">
 					<h1>Level Up</h1>
 					<?php 
 					$newlvl = 1;
