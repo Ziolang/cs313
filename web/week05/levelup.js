@@ -19,7 +19,7 @@ function downStat(stat) {
 	var statpts = parseInt(document.getElementById("caption").innerHTML, 10);
 	var value = parseInt(document.getElementById(stat).innerHTML, 10);
 
-	if (statpts < 3) {
+	if (statpts < 3 && value != 0) {
 		if (stat == "hp" || stat == "mp")
 			value = value - 5;
 		else
