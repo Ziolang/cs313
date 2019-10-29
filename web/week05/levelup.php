@@ -11,7 +11,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   	<script src="levelup.js"></script>
   	<script src="checklvlup.js"></script>
-  	<script src="newunit.js"></script>
+  	<script src="calcmp.js"></script>
 </head>
 <body>
 	<div class="container">
