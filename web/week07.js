@@ -7,6 +7,11 @@ function isIdentical() {
 		return false;
 	}
 
+	if (item1.length < 7) {
+		alert("Password is too short");
+		return false;
+	}
+
 	for (var i = 0; i < item1.length; i++) {
 		if (item1.charAt(i) != item2.charAt(i)) {
 			alert("Passwords Not Identical");
@@ -35,6 +40,16 @@ function checkPassword() {
 	}
 
 	if (!isSame) {
-		document.getElementById('error').innerHTML = "Passwords not identical.";
+		document.getElementById('error').innerHTML = "Passwords not identical.<br>";
+	}	
+
+	if (isSame) {
+		document.getElementById('error').innerHTML = "";
 	}
+
+	if (numCount < 0) {
+		document.getElementById('error').innerHTML += "Password needs to be at least 7 characters long and contain a number.<br>"
+	}
+
+
 }
