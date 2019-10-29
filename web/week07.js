@@ -1,6 +1,8 @@
 function isIdentical() {
 	var item1 = document.getElementById("p1").value
 	var item2 = document.getElementById("p2").value
+	var numCount = 0;
+	var charCount = 0;
 
 	if (item1.length != item2.length) {
 		alert("Passwords Not Identical");
@@ -17,6 +19,17 @@ function isIdentical() {
 			alert("Passwords Not Identical");
 			return false;
 		}
+
+		if (isNaN(item1.charAt(i))) { 
+			charCount++; 
+		} else { 
+			numCount++; 
+		}
+	}
+
+	if (numCount == 0) {
+		alert("Password needs at least one number");
+		return false;
 	}
 }
 
