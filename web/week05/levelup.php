@@ -21,7 +21,7 @@
 	</div>
 	<div class="container">
   		<div class="row">
-			<div class="search col-sm-12">
+			<div class="search col-sm-6">
 				<?php
 				$db = connect();
 
@@ -89,8 +89,7 @@
 				}
 				?>
 			</div>
-			<div class="row">
-			<div class="search col-sm-4">
+			<div class="search col-sm-6">
 				<form onsubmit="return checklvlup()">
 					<h1>Level Up</h1>
 					<?php 
@@ -155,7 +154,9 @@
 						
 					?>	
 				</div>
-			<div class="search col-sm-8">
+			</div>
+			<div class="row">
+			<div class="search col-sm-12">
 					<h2>Create New Skill</h2>
 					Name: <input type="text" name="s1name" onchange="calculateMP()" required><br/><br/>
 					Damage in Percent (If non-damaging skill, set to 0): <input type="number" name="s1dmg" min="0" max="1000" step="10" value="100" size="6" onchange="calculateMP()"><br/><br/>
