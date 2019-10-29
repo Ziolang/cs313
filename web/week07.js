@@ -46,13 +46,15 @@ function checkPassword() {
 	if (!isSame) {
 		document.getElementById('error').innerHTML = "Passwords not identical.<br>";
 	}	
-
-	if (isSame) {
+	else {
 		document.getElementById('error').innerHTML = "";
 	}
 
 	if (numCount == 0) {
 		document.getElementById('error2').innerHTML = "Password needs to be at least 7 characters long and contain a number.<br>";
+	}
+	else {
+		document.getElementById('error2').innerHTML = "";
 	}
 
 
