@@ -108,11 +108,11 @@
 							<span id=\"caption\">3</span> Stat Points Remaining
 						<table>
   							<tr>
-    							<th>Current---</th>
+    							<th>Current --- </th>
     							<th>Stats</th>
-    							<th>---</th>
+    							<th> --- </th>
     							<th>Add</th>
-    							<th>---</th>
+    							<th> --- </th>
     							<th>New Value</th>
     						</tr>
     						<tr>
