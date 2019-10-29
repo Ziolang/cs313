@@ -3,11 +3,13 @@ function isIdentical() {
 	var item2 = document.getElementById("p2").value
 
 	if (item1.length != item2.length) {
+		alert("Passwords Not Identical");
 		return false;
 	}
 
 	for (var i = 0; i < item1.length; i++) {
 		if (item1.charAt(i) != item2.charAt(i)) {
+			alert("Passwords Not Identical");
 			return false;
 		}
 	}
