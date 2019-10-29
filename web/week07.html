@@ -4,9 +4,9 @@
 </head>
 <body>
 	<form onsubmit="return isIdentical()">
-		Password: <input type="text" id="p1"><br/>
+		Password: <input type="text" id="p1" onchange="checkPassword()"><br/>
 		<span id="error" style="color:red"></span>
-		Confirm Password: <input type="text" id="p2">
+		Confirm Password: <input type="text" id="p2" onchange="checkPassword()">
 		<input type="submit">
 	</form>
 </body>
