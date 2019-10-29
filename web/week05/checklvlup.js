@@ -7,8 +7,8 @@ function checklvlup() {
 		return false;
 	}
 
-	if (lvl > 10) {
-		alert("Unit cannot pass level 10 yet.");
+	if (lvl > 9) {
+		alert("Unit cannot pass level 9 yet.");
 		return false;
 	}
 }
