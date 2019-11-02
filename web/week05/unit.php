@@ -100,7 +100,7 @@
 							$skillx = "skill";
 						}
 					}
-					echo "</div><div class=\"col-sm-1\"></div></div>"
+					echo "</div><div class=\"col-sm-1\"></div></div>";
 					
 				}
 				?>
