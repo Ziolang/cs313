@@ -13,7 +13,7 @@
 	$eva = 0;
 	$aaid = "";
 
-	echo "$lvl, $hp, $mp, $atk, $def, $int, $spr<br>"; 
+	echo "Checkpoint 1<br>"; 
 
 	foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
 		$hp += $unit['hp']; 
@@ -30,8 +30,8 @@
 
 		if ($lvl % 3 == 1) { $eva++; }
 	}
-	echo "$lvl, $hp, $mp, $atk, $def, $int, $spr<br>"; 
-/*
+	echo "Checkpoint 2<br>"; 
+
 	$s1name = $_POST['s1name'];
 	$s1dmg = $_POST['s1dmg'];
 	$s1type = $_POST['s1type'];
@@ -55,16 +55,18 @@
 	//A lvl 1 unit has 2 skills, so a lvl 2 unit needs its new skill at slot 3.
 	$y = $lvl + 1;
 	$skillx = "skill" . $y;
-
+	echo "Checkpoint 3<br>"; 
 	try {
 		//Update stats
 
-		$query = "
+		$query = '
 				UPDATE Units
 				SET lvl = $lvl, hp = $hp, mp = $mp, atk = $atk, def = $def, int = $int, spr = $spr, crit = $crit, eva = $eva 
-				WHERE Units.id =" . $_GET['id'];
+				WHERE Units.id =' . $_GET['id'];
 		$statement = $db->prepare($query);
 		$statement->execute();
+
+		echo "Checkpoint 4<br>"; 
 
 		//Add new Skill
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
@@ -85,7 +87,7 @@
 				WHERE Units.id = $aaid";
 		$statement = $db->prepare($query);
 		$statement->execute();
-
+		echo "Checkpoint 5<br>"; 
 	}
 	catch (Exception $ex)
 	{
@@ -94,5 +96,5 @@
 	}
 
 	header("Location: unit.php?id=" . $_GET['id']);
-	die(); */
+	die();
 ?>
