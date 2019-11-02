@@ -92,7 +92,7 @@
 			<div class="search col-sm-6">
 				<?php 
 				echo '<form onsubmit="return checklvlup()" action="finalizelvlup.php?id=' . $_GET['id'] . '" method="post">
-					<h1>Level Up</h1>'
+					<h1>Level Up</h1>';
 					
 					$newlvl = 1;
 					$unit = "";
