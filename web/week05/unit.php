@@ -48,6 +48,7 @@
 						$skillx = "skill";
 						for ($x = 1; $x < 10; $x++) {
 							$skillx .= $x;
+
 							if (!is_null($aa[$skillx])) {
 								foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
 									echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
@@ -66,27 +67,7 @@
 
 						echo "CP $x";
 					}
-
-						echo "CP 11";
-
-						/*foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill1']) as $sk1) {
-							echo "<br/><strong>+ " . $sk1['name'] . ":</strong> ";
-							if ($sk1['dmg'] > 0)
-								echo $sk1['dmg'] . "% " . $sk1['stat'] . " Damage. ";
-							if ($sk1['effect'] != NULL)
-								echo $sk1['effect'] . " ";
-							echo "Range: " . $sk1['range'] . ". " . $sk1['mp'] . " MP.";
-						}
-
-						foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill2']) as $sk2) {
-							echo "<br/><strong>+ " . $sk2['name'] . ":</strong> ";
-							if ($sk2['dmg'] > 0)
-								echo $sk2['dmg'] . "% " . $sk2['stat'] . " Damage. ";
-							if ($sk2['effect'] != NULL)
-								echo $sk2['effect'] . " ";
-							echo "Range: " . $sk2['range'] . ". " . $sk2['mp'] . " MP.";
-						}*/
-					}
+					
 
 					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['sability']) as $sa) {
 						echo "<br/><strong>S-Ability:</strong> " . $sa['name'] . ": " . $sa['effect'];
