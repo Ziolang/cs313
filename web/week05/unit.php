@@ -45,8 +45,8 @@
 					foreach ($db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['aability']) as $aa) {
 						echo "<br/><strong>A-Ability:</strong> " . $aa['name'];
 
-						for ($i = 0; i < 9; i++) {
-							foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill1']) as $sk) {
+						for ($i = 1; i < 10; i++) {
+							foreach ($db->query("SELECT * FROM Skills WHERE Skills.id = skill" . $i) as $sk) {
 								if (!is_null($sk)) {
 									echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
 									if ($sk['dmg'] > 0)
