@@ -99,10 +99,10 @@
 					
 					foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $x) {
 						$unit = $x;
-						echo '<input name="id" style="visibility:hidden;" value="' . $x['id'] . '">';
-						echo '<input name="lvl" style="visibility:hidden;" value="' . $x['lvl'] . '">';
 					}
 					$newlvl += $unit['lvl'];
+					echo '<input name="id" style="visibility:hidden;" value="' . $unit['id'] . '">';
+					echo '<input name="lvl" style="visibility:hidden;" value="' . $newlvl . '">';
 					echo "<h2>New Level: $newlvl</h2><br/> <h3 id=\"statpts\">3 Stat Points gained</h3><br/>";
 
 					echo "
