@@ -45,18 +45,45 @@
 					foreach ($db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['aability']) as $aa) {
 						echo "<br/><strong>A-Ability:</strong> " . $aa['name'];
 
-						for ($i = 1; i < 10; i++) {
-							foreach ($db->query("SELECT * FROM Skills WHERE Skills.id = skill" . $i) as $sk) {
-								if (!is_null($sk)) {
-									echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
-									if ($sk['dmg'] > 0)
-										echo $sk['dmg'] . "% " . $sk['stat'] . " Damage. ";
-									if ($sk['effect'] != NULL)
-										echo $sk['effect'] . " ";
-									echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
+						$skillx = "skill";
+						for ($x = 1; $x < 10; $x++) {
+							$skillx .= $x;
+
+							foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
+								if (is_null($sk)) {
+									break;
 								}
+
+								echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
+								
+								if ($sk['dmg'] > 0)
+									echo $sk['dmg'] . "% " . $sk['stat'] . " Damage. ";
+								
+								if ($sk['effect'] != NULL)
+									echo $sk['effect'] . " ";
+								
+								echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
 							}
+
 						}
+
+						/*foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill1']) as $sk1) {
+							echo "<br/><strong>+ " . $sk1['name'] . ":</strong> ";
+							if ($sk1['dmg'] > 0)
+								echo $sk1['dmg'] . "% " . $sk1['stat'] . " Damage. ";
+							if ($sk1['effect'] != NULL)
+								echo $sk1['effect'] . " ";
+							echo "Range: " . $sk1['range'] . ". " . $sk1['mp'] . " MP.";
+						}
+
+						foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill2']) as $sk2) {
+							echo "<br/><strong>+ " . $sk2['name'] . ":</strong> ";
+							if ($sk2['dmg'] > 0)
+								echo $sk2['dmg'] . "% " . $sk2['stat'] . " Damage. ";
+							if ($sk2['effect'] != NULL)
+								echo $sk2['effect'] . " ";
+							echo "Range: " . $sk2['range'] . ". " . $sk2['mp'] . " MP.";
+						}*/
 					}
 
 					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['sability']) as $sa) {
