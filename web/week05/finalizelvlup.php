@@ -91,7 +91,7 @@
 		$query = "
 				UPDATE Skillset
 				SET $skillx = $sk1 
-				WHERE Units.id = $aaid";
+				WHERE Skillset.id = $aaid";
 		$statement = $db->prepare($query);
 		$statement->execute();
 		echo "Checkpoint 5<br>"; 
