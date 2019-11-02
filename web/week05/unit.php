@@ -62,8 +62,8 @@
 					else {
 						echo "None.";
 					}
-					echo "</div><div class=\"search col-sm-5\">";
-					echo "<br/><strong>HP:</strong> " . $unit['hp'] .
+					echo "</div><div class=\"search col-sm-3\">";
+					echo "<strong>HP:</strong> " . $unit['hp'] .
 						"<br/><strong>MP:</strong> " . $unit['mp'] .
 						"<br/><strong>Atk:</strong> " . $unit['atk'] .
 						"<br/><strong>Def:</strong> " . $unit['def'] .
@@ -72,7 +72,16 @@
 						"<br/><strong>Crit:</strong> " . $unit['crit'] .
 						"<br/><strong>Eva:</strong> " . $unit['eva'] .
 						"<br/><strong>Move:</strong> " . $unit['move'] . 
-						"</div><div class=\"col-sm-1\"></div></div>
+						"</div>
+								<div class=\"col-sm-2\">
+									<button type=\"button\" value=\"LEVEL UP\" href=\"levelup.php?id=\"" . $_GET['id'] . ">
+									<br/>
+									<br/>
+									<br/>
+									<button type=\"button\" value=\"DELETE UNIT\" href=\"delete.php\">
+								</div>
+								<div class=\"col-sm-1\"></div>
+							</div>
 							<div class=\"row\">
 								<div class=\"col-sm-1\"></div>
 								<div class=\"search col-sm-10\">";
