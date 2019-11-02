@@ -48,7 +48,7 @@
 						$skillx = "skill";
 						for ($x = 1; $x < 10; $x++) {
 							$skillx .= $x;
-							if (!is_null($aa[$skillx])) 
+							if (!is_null($aa[$skillx])) {
 								foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
 									echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
 								
@@ -60,6 +60,7 @@
 								
 									echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
 								}
+							}
 						}
 						$skillx = "skill";
 
