@@ -70,7 +70,7 @@
 		$statement->bindValue(':spr', $spr);
 		$statement->bindValue(':crit', $crit);
 		$statement->bindValue(':eva', $eva);
-		$statement->bindValue(':eva', $_GET['id']);
+		$statement->bindValue(':id', $_GET['id']);
 		$statement->execute();
 
 		echo "Checkpoint 4<br>"; 
