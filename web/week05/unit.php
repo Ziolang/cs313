@@ -30,7 +30,7 @@
 
 				
 				foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
-					echo "<h1>" . $unit['name'] . "</h1></div><div class=\"col-sm-1\"></div>
+					echo "<h1>" . $unit['name'] . "</h1></div><div class=\"col-sm-1\"></div></div>
 						<div class=\"row\">
 							<div class=\"col-sm-1\"></div>
 							<div class=\"search col-sm-5\">
@@ -105,11 +105,5 @@
 				}
 				?>
 			</div>
-			<div class="col-sm-2">
-
-
-			</div>
-		</div>
-
 	</div>
 </body>
