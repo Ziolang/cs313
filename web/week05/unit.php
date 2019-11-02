@@ -51,8 +51,8 @@
 
 							foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
 								if (is_null($sk)) {
-									break;
 								}
+								else {
 
 								echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
 								
@@ -63,6 +63,7 @@
 									echo $sk['effect'] . " ";
 								
 								echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
+							}
 							}
 							$skillx = "skill";
 
