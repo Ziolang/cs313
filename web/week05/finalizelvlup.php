@@ -13,6 +13,8 @@
 	$eva = 0;
 	$aaid = "";
 
+	echo "$lvl, $hp, $mp, $atk, $def, $int, $spr"; 
+/*
 	foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
 		$hp += $unit['hp']; 
 		$mp += $unit['mp']; 
@@ -91,5 +93,5 @@
 	}
 
 	header("Location: unit.php?id=" . $_GET['id']);
-	die();
+	die(); */
 ?>
