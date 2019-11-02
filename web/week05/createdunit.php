@@ -96,12 +96,10 @@
 	$s2mp = $_POST['s2mp'];
 
 	try	{
-	// Add the Scripture
-	// We do this by preparing the query with placeholder values
+
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
-	// Now we bind the values to the placeholders. This does some nice things
-	// including sanitizing the input with regard to sql commands.
+
 		$statement->bindValue(':name', $s1name);
 		$statement->bindValue(':dmg', $s1dmg);
 		$statement->bindValue(':stat', $s1type);
@@ -114,8 +112,7 @@
 
 		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
 		$statement = $db->prepare($query);
-	// Now we bind the values to the placeholders. This does some nice things
-	// including sanitizing the input with regard to sql commands.
+
 		$statement->bindValue(':name', $s2name);
 		$statement->bindValue(':dmg', $s2dmg);
 		$statement->bindValue(':stat', $s2type);
@@ -129,8 +126,7 @@
 		$query = 'INSERT INTO SkillSet(name, skill1, skill2) VALUES(:name, :skill1, :skill2)';
 		$statement = $db->prepare($query);
 
-	// Now we bind the values to the placeholders. This does some nice things
-	// including sanitizing the input with regard to sql commands.
+
 		$statement->bindValue(':name', $aa);
 		$statement->bindValue(':skill1', $sk1);
 		$statement->bindValue(':skill2', $sk2);
@@ -143,8 +139,7 @@
 			:weapon2, :armor, :accessory, :lvl,
 			:exp, :hp, :mp, :atk, :def, :int, :spr, :move, :crit, :eva)';
 		$statement = $db->prepare($query);
-	// Now we bind the values to the placeholders. This does some nice things
-	// including sanitizing the input with regard to sql commands.
+
 		$statement->bindValue(':name', $name);
 		$statement->bindValue(':class', $class);
 		$statement->bindValue(':aability', $aaid);
@@ -175,7 +170,7 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-// finally, redirect them to a new page to actually show the topics
+
 header("Location: unit.php?id=" . $unitid);
 die();
 ?>

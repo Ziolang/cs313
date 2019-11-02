@@ -11,6 +11,7 @@
 	$spr = $_POST['spr']; 
 	$crit = 0;
 	$eva = 0;
+	$aaid = "";
 
 	foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
 		$hp += $unit['hp']; 
@@ -21,6 +22,7 @@
 		$spr += $unit['spr']; 
 		$crit = $unit['crit'];
 		$eva = $unit['eva'];
+		$aaid = $unit['aability'];
 
 		if ($lvl % 3 == 0) { $crit++; }
 
@@ -52,21 +54,42 @@
 	$skillx = "skill" . $y;
 
 	try {
+		//Update stats
+
 		$query = "
 				UPDATE Units
 				SET lvl = $lvl, hp = $hp, mp = $mp, atk = $atk, def = $def, int = $int, spr = $spr, crit = $crit, eva = $eva 
-				WHERE Units.id = $_GET['id']";
+				WHERE Units.id =" . $_GET['id'];
 		$statement = $db->prepare($query);
 		$statement->execute();
 
-		
+		//Add new Skill
+		$query = 'INSERT INTO Skills(name, dmg, stat, effect, range, mp) VALUES(:name, :dmg, :stat, :effect, :range, :mp)';
+		$statement = $db->prepare($query);
+
+		$statement->bindValue(':name', $s1name);
+		$statement->bindValue(':dmg', $s1dmg);
+		$statement->bindValue(':stat', $s1type);
+		$statement->bindValue(':effect', $s1effect);
+		$statement->bindValue(':range', $s1range);
+		$statement->bindValue(':mp', $s1mp);
+		$statement->execute();
+
+		$sk1 = $db->lastInsertId();
+		$query = "
+				UPDATE Skillset
+				SET $skillx = $sk1 
+				WHERE Units.id = $aaid";
+		$statement = $db->prepare($query);
+		$statement->execute();
+
 	}
 	catch (Exception $ex)
 	{
 		echo "Error with DB. Details: $ex";
 		die();
 	}
-	// finally, redirect them to a new page to actually show the topics
-	header("Location: unit.php?id=" . $unitid);
+
+	header("Location: unit.php?id=" . $_GET['id']);
 	die();
 ?>
