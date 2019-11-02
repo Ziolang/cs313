@@ -62,8 +62,8 @@
 									echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
 								}
 							}
+							$skillx = "skill";
 						}
-						$skillx = "skill";
 
 						echo "CP $x";
 					}
