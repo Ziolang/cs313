@@ -48,25 +48,23 @@
 						$skillx = "skill";
 						for ($x = 1; $x < 10; $x++) {
 							$skillx .= $x;
-
-							foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
-								if (!is_null($sk)) {
-
-								echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
+							if (!is_null($aa[$skillx])) 
+								foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
+									echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
 								
-								if ($sk['dmg'] > 0)
-									echo $sk['dmg'] . "% " . $sk['stat'] . " Damage. ";
+									if ($sk['dmg'] > 0)
+										echo $sk['dmg'] . "% " . $sk['stat'] . " Damage. ";
 								
-								if ($sk['effect'] != NULL)
-									echo $sk['effect'] . " ";
+									if ($sk['effect'] != NULL)
+										echo $sk['effect'] . " ";
 								
-								echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
-							}
-							}
-							$skillx = "skill";
-
-							echo "CP $x";
+									echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
+								}
 						}
+						$skillx = "skill";
+
+						echo "CP $x";
+					}
 
 						echo "CP 11";
 
