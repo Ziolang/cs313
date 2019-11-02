@@ -1,4 +1,7 @@
-<?php include "connect.php";?>
+<?php 
+	include "connect.php";
+	$db = connect();
+?>
 
 <!DOCTYPE html>
 <head>
@@ -18,17 +21,20 @@
 	</div>
 	<div class="container">
   		<div class="row">
-			<div class="col-sm-2">
+			<div class="col-sm-1">
 
 
 			</div>
-			<div class="search col-sm-8">
+			<div class="search col-sm-10">
 				<?php
-				$db = connect();
 
 				
 				foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
-					echo "<h1>" . $unit['name'] . "</h1><br/><strong>Level:</strong> " . $unit['lvl'] . "<br/><strong>Experience:</strong> " . $unit['exp'] . "<br/><strong>Class:</strong> " . $unit['class'] . "<br/><strong>Weapon:</strong> ";
+					echo "<h1>" . $unit['name'] . "</h1></div><div class=\"col-sm-1\"></div>
+						<div class=\"row\">
+							<div class=\"col-sm-1\"></div>
+							<div class=\"search col-sm-5\">
+							<strong>Level:</strong> " . $unit['lvl'] . "<br/><strong>Experience:</strong> " . $unit['exp'] . "<br/><strong>Class:</strong> " . $unit['class'] . "<br/><strong>Weapon:</strong> ";
 					foreach ($db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['weapon1']) as $w1) {
 						echo $w1['name'] . " (" . $w1['effect'] . ")";
 					}
@@ -42,32 +48,6 @@
 					foreach ($db->query("SELECT * FROM Equips WHERE Equips.id =" . $unit['accessory']) as $ac) {
 						echo "<br/><strong>Accessory:</strong> " . $ac['name'] . " (" . $ac['effect'] . ")";
 					}
-					foreach ($db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['aability']) as $aa) {
-						echo "<br/><strong>A-Ability:</strong> " . $aa['name'];
-
-						$skillx = "skill";
-						for ($x = 1; $x < 10; $x++) {
-							$skillx .= $x;
-
-							if (!is_null($aa[$skillx])) {
-								foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
-									echo "<br/><strong>+ " . $sk['name'] . ":</strong> ";
-								
-									if ($sk['dmg'] > 0)
-										echo $sk['dmg'] . "% " . $sk['stat'] . " Damage. ";
-								
-									if ($sk['effect'] != NULL)
-										echo $sk['effect'] . " ";
-								
-									echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
-								}
-							}
-							$skillx = "skill";
-						}
-
-						echo "CP $x";
-					}
-					
 
 					foreach ($db->query("SELECT * FROM Abilities WHERE Abilities.id =" . $unit['sability']) as $sa) {
 						echo "<br/><strong>S-Ability:</strong> " . $sa['name'] . ": " . $sa['effect'];
@@ -82,7 +62,7 @@
 					else {
 						echo "None.";
 					}
-
+					echo "</div><div class=\"search col-sm-5\">";
 					echo "<br/><strong>HP:</strong> " . $unit['hp'] .
 						"<br/><strong>MP:</strong> " . $unit['mp'] .
 						"<br/><strong>Atk:</strong> " . $unit['atk'] .
@@ -91,7 +71,37 @@
 						"<br/><strong>Spr:</strong> " . $unit['spr'] .
 						"<br/><strong>Crit:</strong> " . $unit['crit'] .
 						"<br/><strong>Eva:</strong> " . $unit['eva'] .
-						"<br/><strong>Move:</strong> " . $unit['move'];
+						"<br/><strong>Move:</strong> " . $unit['move'] . 
+						"</div><div class=\"col-sm-1\"></div></div>
+							<div class=\"row\">
+								<div class=\"col-sm-1\"></div>
+								<div class=\"search col-sm-10\">";
+
+					foreach ($db->query("SELECT * FROM SkillSet WHERE SkillSet.id =" . $unit['aability']) as $aa) {
+						echo "<br/><strong>A-Ability:</strong> " . $aa['name'];
+
+						$skillx = "skill";
+						for ($x = 1; $x < 10; $x++) {
+							$skillx .= $x;
+
+							if (!is_null($aa[$skillx])) {
+								foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa[$skillx]) as $sk) {
+									echo "<br/><br/><strong>+ " . $sk['name'] . ":</strong> ";
+								
+									if ($sk['dmg'] > 0)
+										echo $sk['dmg'] . "% " . $sk['stat'] . " Damage. ";
+								
+									if ($sk['effect'] != NULL)
+										echo $sk['effect'] . " ";
+								
+									echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
+								}
+							}
+							$skillx = "skill";
+						}
+					}
+					echo "</div><div class=\"col-sm-1\"></div></div>"
+					
 				}
 				?>
 			</div>
