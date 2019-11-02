@@ -65,7 +65,11 @@
 								echo "Range: " . $sk['range'] . ". " . $sk['mp'] . " MP.";
 							}
 							$skillx = "skill";
+
+							echo "CP $x";
 						}
+
+						echo "CP 11";
 
 						/*foreach ($db->query("SELECT * FROM Skills WHERE Skills.id =" . $aa['skill1']) as $sk1) {
 							echo "<br/><strong>+ " . $sk1['name'] . ":</strong> ";
