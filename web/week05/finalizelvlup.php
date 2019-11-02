@@ -13,8 +13,8 @@
 	$eva = 0;
 	$aaid = "";
 
-	echo "$lvl, $hp, $mp, $atk, $def, $int, $spr"; 
-/*
+	echo "$lvl, $hp, $mp, $atk, $def, $int, $spr<br>"; 
+
 	foreach ($db->query("SELECT * FROM Units WHERE Units.id =" . $_GET['id']) as $unit) {
 		$hp += $unit['hp']; 
 		$mp += $unit['mp']; 
@@ -30,7 +30,8 @@
 
 		if ($lvl % 3 == 1) { $eva++; }
 	}
-
+	echo "$lvl, $hp, $mp, $atk, $def, $int, $spr<br>"; 
+/*
 	$s1name = $_POST['s1name'];
 	$s1dmg = $_POST['s1dmg'];
 	$s1type = $_POST['s1type'];
