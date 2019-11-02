@@ -59,7 +59,7 @@
 	try {
 		//Update stats
 
-		$query = "UPDATE Units SET lvl = :lvl, hp = :hp, mp = :mp, atk = :atk, def = :def, int = :int, spr = :spr, crit = :crit, eva = :eva WHERE Units.id = $_GET['id']";
+		$query = "UPDATE Units SET lvl = :lvl, hp = :hp, mp = :mp, atk = :atk, def = :def, int = :int, spr = :spr, crit = :crit, eva = :eva WHERE Units.id = :id";
 		$statement = $db->prepare($query);
 		$statement->bindValue(':lvl', $lvl);
 		$statement->bindValue(':hp', $hp);
@@ -70,6 +70,7 @@
 		$statement->bindValue(':spr', $spr);
 		$statement->bindValue(':crit', $crit);
 		$statement->bindValue(':eva', $eva);
+		$statement->bindValue(':eva', $_GET['id']);
 		$statement->execute();
 
 		echo "Checkpoint 4<br>"; 
