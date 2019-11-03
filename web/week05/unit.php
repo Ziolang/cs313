@@ -62,7 +62,7 @@
 					else {
 						echo "None.";
 					}
-					echo "</div><div class=\"search col-sm-3\">";
+					echo "</div><div class=\"search col-sm-2\">";
 					echo "<strong>HP:</strong> " . $unit['hp'] .
 						"<br/><strong>MP:</strong> " . $unit['mp'] .
 						"<br/><strong>Atk:</strong> " . $unit['atk'] .
@@ -73,7 +73,7 @@
 						"<br/><strong>Eva:</strong> " . $unit['eva'] .
 						"<br/><strong>Move:</strong> " . $unit['move'] . 
 						"</div>
-								<div class=\"search col-sm-2\">
+								<div class=\"search col-sm-3\">
 									<a class=\"unitbtn\" href=\"levelup.php?id=" . $_GET['id'] . "\"><img src=\"lvlup.png\"/></a>
 									<br/>
 									<br/>

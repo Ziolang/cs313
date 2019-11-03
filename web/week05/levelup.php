@@ -90,9 +90,9 @@
 				?>
 			</div>
 			<div class="search col-sm-6">
-				<?php 
-				echo '<form onsubmit="return checklvlup()" action="finalizelvlup.php?id=' . $_GET['id'] . '" method="post">
-					<h1>Level Up</h1>';
+				<form onsubmit="return checklvlup()" <?php echo ' action="finalizelvlup.php?id=' . $_GET['id'] . '" method="post"'; ?> > 
+					<?php
+					echo '<h1>Level Up</h1>';
 					
 					$newlvl = 1;
 					$unit = "";
