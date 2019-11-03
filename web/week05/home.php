@@ -26,11 +26,11 @@
 		foreach ($db->query("SELECT * FROM Units") as $row) {
 			if ($count == 3) { echo  '</div><div class="row">';}
 			$url = "result.php?" ."id=" . $row['id'];
-			echo "<div class=\"select col-sm-4\"><h1>
-				<a class=\"centered unitresult\" href=\"$url\">" . 
-				$row['name'] . "</h1>The Level " . 
+			echo "<div class=\"select col-sm-4\">
+				<a class=\"centered unitresult\" href=\"$url\"><h1>" . 
+				$row['name'] . "<br/>The Level " . 
 				$row['lvl'] . " " . 
-				$row['class'] . "</a><br/></div>";
+				$row['class'] . "</h1></a><br/></div>";
 
 			$count++;
 		}
