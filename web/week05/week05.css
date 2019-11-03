@@ -29,6 +29,7 @@ li a:hover {
 	background-color: #d10000;
 	border: 3px solid #b00000;
 	height:300px;
+	padding:20px;
 }
 
 body {

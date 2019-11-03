@@ -27,7 +27,7 @@
 			if ($count == 3) { echo  '</div><div class="row">';}
 			$url = "result.php?" ."id=" . $row['id'];
 			echo "<div class=\"select col-sm-4\">
-				<a class=\"centered unitresult\" href=\"$url\"><h1>" . 
+				<a class=\"center unitresult\" href=\"$url\"><h1>" . 
 				$row['name'] . "<br/>The Level " . 
 				$row['lvl'] . " " . 
 				$row['class'] . "</h1></a><br/></div>";
