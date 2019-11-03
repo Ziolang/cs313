@@ -73,7 +73,7 @@
 						"<br/><strong>Eva:</strong> " . $unit['eva'] .
 						"<br/><strong>Move:</strong> " . $unit['move'] . 
 						"</div>
-								<div class=\"col-sm-2\">
+								<div class=\"search col-sm-2\">
 									<button type=\"button\" href=\"levelup.php?id=\"" . $_GET['id'] . ">LEVEL UP</button>
 									<br/>
 									<br/>
