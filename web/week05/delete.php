@@ -16,7 +16,7 @@
 		die();
 	}
 
-	header("Location: search.php");
+	header("Location: home.php");
 	die();
 ?>
 
