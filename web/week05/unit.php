@@ -74,11 +74,11 @@
 						"<br/><strong>Move:</strong> " . $unit['move'] . 
 						"</div>
 								<div class=\"col-sm-2\">
-									<button type=\"button\" value=\"LEVEL UP\" href=\"levelup.php?id=\"" . $_GET['id'] . ">
+									<button type=\"button\" href=\"levelup.php?id=\"" . $_GET['id'] . ">LEVEL UP</button>
 									<br/>
 									<br/>
 									<br/>
-									<button type=\"button\" value=\"DELETE UNIT\" href=\"delete.php\">
+									<button type=\"button\" href=\"delete.php\">DELETE UNIT</button>
 								</div>
 								<div class=\"col-sm-1\"></div>
 							</div>
