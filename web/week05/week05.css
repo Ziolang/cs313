@@ -59,3 +59,18 @@ body {
 .unitresult:visited {
 	color:white;
 }
+
+.unitbtn {
+	text-align:center;
+	width:80%;
+	background-color: #1c87c9;
+	border: none;
+	color: white;
+	padding: 20px 34px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: auto;
+	cursor: pointer;
+}
