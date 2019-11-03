@@ -78,7 +78,7 @@
 									<br/>
 									<br/>
 									<br/>
-									<a class=\"unitbtn\" href=\"levelup.php?id=" . $_GET['id'] . "\">DELETE UNIT</a>
+									<a class=\"unitbtn\" href=\"delete.php?id=" . $_GET['id'] . "\" onclick=\"return confirm('Are you sure you want to delete this unit?')\">DELETE UNIT</a>
 								</div>
 								<div class=\"col-sm-1\"></div>
 							</div>
