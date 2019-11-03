@@ -24,7 +24,7 @@
 	<?php 
 		$count = 0;
 		foreach ($db->query("SELECT * FROM Units WHERE Units.name = '$name'") as $row) {
-			if ($count == 3) { echo  '</div><div class="row">'}
+			if ($count == 3) { echo  '</div><div class="row">';}
 			$url = "result.php?" ."id=" . $row['id'];
 			echo "<div class=\"select col-sm-4\"><h1>
 				<a class=\"centered unitresult\" href=\"$url\">" . 
