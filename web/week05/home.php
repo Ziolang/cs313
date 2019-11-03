@@ -1,3 +1,7 @@
+<?php 
+	include "connect.php";
+	$db = connect();
+?>
 
 <!DOCTYPE html>
 <head>
@@ -16,15 +20,22 @@
 		</div>
 	</div>
 	<div class="container">
-  		<div class="row">
-			<div class="select col-sm-4"></div>
-			<div class="select col-sm-4"></div>
-			<div class="select col-sm-4"></div>
-		</div>
 		<div class="row">
-			<div class="select col-sm-4"></div>
-			<div class="select col-sm-4"></div>
-			<div class="select col-sm-4"></div>
+	<?php 
+		$count = 0;
+		foreach ($db->query("SELECT * FROM Units WHERE Units.name = '$name'") as $row) {
+			if ($count == 3) { echo  '</div><div class="row">'}
+			$url = "result.php?" ."id=" . $row['id'];
+			echo "<div class=\"select col-sm-4\"><h1>
+				<a class=\"centered unitresult\" href=\"$url\">" . 
+				$row['name'] . "</h1>The Level " . 
+				$row['lvl'] . " " . 
+				$row['class'] . "</a><br/></div>";
+
+			$count++;
+		}
+	?>
+
 		</div>
 
 	</div>
