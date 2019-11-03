@@ -74,11 +74,11 @@
 						"<br/><strong>Move:</strong> " . $unit['move'] . 
 						"</div>
 								<div class=\"search col-sm-2\">
-									<button type=\"button\" class=\"unitbtn\" onclick=\"window.location.href = 'levelup.php?id=\"" . $_GET['id'] . "'>LEVEL UP</button>
+									<a class=\"unitbtn\" href=\"levelup.php?id=" . $_GET['id'] . "\">LEVEL UP</a>
 									<br/>
 									<br/>
 									<br/>
-									<button type=\"button\" class=\"unitbtn\" onclick=\"window.location.href = 'delete.php?id=\"" . $_GET['id'] . "'>DELETE UNIT</button>
+									<a class=\"unitbtn\" href=\"levelup.php?id=" . $_GET['id'] . "\">DELETE UNIT</a>
 								</div>
 								<div class=\"col-sm-1\"></div>
 							</div>
